@@ -44,6 +44,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileAboutSubmenuOpen, setMobileAboutSubmenuOpen] = useState(false);
+  const [mobileServicesSubmenuOpen, setMobileServicesSubmenuOpen] = useState(false);
 
   const router = useRouter();
   const pathname = usePathname();
@@ -63,6 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   useEffect(() => {
     setMobileMenuOpen(false);
     setMobileAboutSubmenuOpen(false);
+    setMobileServicesSubmenuOpen(false);
   }, [pathname]);
 
   const handleNavClick = (id: string, path?: string) => {
@@ -130,7 +132,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             href="/"
             className="flex items-center gap-3 group text-left focus:outline-none"
           >
-            <div className="relative h-16  sm:h-24 overflow-hidden  group-hover:scale-110 transition-transform duration-300 ">
+            <div className="relative h-16 sm:h-24 overflow-hidden group-hover:scale-110 transition-transform duration-300">
               <img 
                 src={CLINIC_INFO.logoUrl} 
                 alt="Serenity Behavioral & Wellness Services Logo" 
@@ -284,7 +286,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                       </div>
                     </Link>
                   ))}
-                  
                 </div>
               </div>
             </div>
@@ -368,10 +369,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onClick={() => setMobileAboutSubmenuOpen(!mobileAboutSubmenuOpen)}
                   className="w-full px-4 py-3 rounded-xl text-left font-semibold text-sm text-slate-800 hover:bg-slate-50 flex items-center justify-between"
                 >
-                  <span className="flex items-center gap-2">
-                    <Building2 className="w-4 h-4 text-teal-600" />
-                    <span>About Us</span>
-                  </span>
+                  <span>About Us</span>
                   <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform ${mobileAboutSubmenuOpen ? 'rotate-180' : ''}`} />
                 </button>
 
@@ -397,13 +395,39 @@ export const Navbar: React.FC<NavbarProps> = ({
                 )}
               </div>
 
-              <Link
-                href="/services"
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-3 rounded-xl text-left font-semibold text-sm text-slate-700 hover:bg-slate-50"
-              >
-                Services
-              </Link>
+              {/* Mobile Services Submenu Expandable */}
+              <div>
+                <button
+                  onClick={() => setMobileServicesSubmenuOpen(!mobileServicesSubmenuOpen)}
+                  className="w-full px-4 py-3 rounded-xl text-left font-semibold text-sm text-slate-800 hover:bg-slate-50 flex items-center justify-between"
+                >
+                  <span>Services</span>
+                  <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform ${mobileServicesSubmenuOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {mobileServicesSubmenuOpen && (
+                  <div className="ml-4 pl-3 border-l-2 border-teal-200 my-1 space-y-1">
+                    <Link
+                      href="/services"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-2 rounded-lg text-xs font-bold text-teal-800 hover:bg-teal-50 bg-teal-50/50 mb-1"
+                    >
+                      ✨ All Services Overview
+                    </Link>
+                    {SERVICES_DATA.map((srv) => (
+                      <Link
+                        key={srv.id}
+                        href={`/services/${srv.id}`}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block px-3 py-2.5 rounded-lg text-xs font-bold text-slate-800 hover:bg-teal-50 hover:text-teal-900"
+                      >
+                        {srv.title}
+                        <span className="block font-normal text-[11px] text-slate-500 mt-0.5 line-clamp-1">{srv.shortDesc}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
               <Link
                 href="/conditions"
@@ -447,4 +471,3 @@ export const Navbar: React.FC<NavbarProps> = ({
     </header>
   );
 };
-
