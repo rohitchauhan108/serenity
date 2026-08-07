@@ -326,6 +326,7 @@ export default function ContactPage() {
       <AppointmentModal
         isOpen={isAppointmentModalOpen}
         onClose={() => setIsAppointmentModalOpen(false)}
+        showVisitOptions={false}
       />
 
     </div>

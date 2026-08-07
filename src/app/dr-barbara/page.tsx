@@ -84,7 +84,7 @@ export default function DrBarbaraPage() {
     },
     {
       q: 'Is telehealth available with Dr. Barbara across Maryland?',
-      a: 'Yes! Dr. Barbara is fully licensed to provide HIPAA-compliant video appointments for patients residing anywhere in the State of Maryland, as well as in-person visits in Columbia, MD.'
+      a: 'Yes! Dr. Barbara is fully licensed to provide HIPAA-compliant video appointments for patients residing anywhere in the State of Maryland.'
     }
   ];
 

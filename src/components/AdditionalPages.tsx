@@ -67,7 +67,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, type, onClose })
 
             <h4 className="font-bold text-slate-900 text-sm">4. Contacting Our Privacy Officer</h4>
             <p>
-              If you have questions regarding your medical records or privacy rights, please contact care@serenitybehavioralmd.com or call (410) 555-0198.
+              If you have questions regarding your medical records or privacy rights, please contact info@serenitybws.com or call (410) 555-0198.
             </p>
           </div>
         ) : (

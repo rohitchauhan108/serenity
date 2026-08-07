@@ -94,7 +94,7 @@ export interface AppointmentFormData {
   dateOfBirth?: string;
   preferredDate: string;
   preferredTime: string;
-  visitType: 'In-Person' | 'Telehealth';
+  visitType: 'Telehealth';
   serviceType: string;
   insuranceProvider: string;
   subject: string;

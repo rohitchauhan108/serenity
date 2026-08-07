@@ -57,7 +57,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialServiceNa
             Begin Your Serenity Mental Health Journey
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            Schedule an in-person consultation at our Columbia, Maryland clinic or book a secure telehealth video session from anywhere in Maryland.
+            Book a secure telehealth video session from anywhere in Maryland.
           </p>
         </div>
 
@@ -188,40 +188,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialServiceNa
                     <span className="text-[10px] font-bold uppercase tracking-wider text-teal-800 bg-teal-50 px-2.5 py-1 rounded-full">
                       Accepting New Patients
                     </span>
-                  </div>
-
-                  {/* Visit Type Choice Pills */}
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1.5">
-                      Preferred Visit Setting
-                    </label>
-                    <div className="grid grid-cols-2 gap-3">
-                      <button
-                        type="button"
-                        onClick={() => setFormData({ ...formData, visitType: 'Telehealth' })}
-                        className={`p-3 rounded-xl border text-xs font-bold flex items-center justify-center gap-2 transition-colors ${
-                          formData.visitType === 'Telehealth'
-                            ? 'bg-teal-700 text-white border-teal-700 shadow-xs'
-                            : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'
-                        }`}
-                      >
-                        <Video className="w-4 h-4" />
-                        <span>Maryland Telehealth (Video)</span>
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() => setFormData({ ...formData, visitType: 'In-Person' })}
-                        className={`p-3 rounded-xl border text-xs font-bold flex items-center justify-center gap-2 transition-colors ${
-                          formData.visitType === 'In-Person'
-                            ? 'bg-teal-700 text-white border-teal-700 shadow-xs'
-                            : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'
-                        }`}
-                      >
-                        <Building2 className="w-4 h-4" />
-                        <span>Columbia, MD Clinic</span>
-                      </button>
-                    </div>
                   </div>
 
                   {/* Name & Phone */}

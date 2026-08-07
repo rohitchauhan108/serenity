@@ -7,7 +7,6 @@ import {
   Send,
   CheckCircle2,
   Video,
-  Building2,
   Clock,
   ShieldCheck
 } from 'lucide-react';
@@ -27,7 +26,6 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
   initialServiceName = ''
 }) => {
   const initialTitle = initialServiceName || presetServiceTitle || '';
-  const [visitType, setVisitType] = useState<'Telehealth' | 'In-Person'>('Telehealth');
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -94,41 +92,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
                 <h3 className="font-heading font-extrabold text-xl text-slate-900">
                   Book Psychiatric Evaluation
                 </h3>
-                <span className="text-xs text-slate-500">Dr. Barbara Clement Njoku, DNP • Maryland Clinic</span>
-              </div>
-            </div>
-
-            {/* Visit Setting Pills */}
-            <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">
-                Care Delivery Setting
-              </label>
-              <div className="grid grid-cols-2 gap-2">
-                <button
-                  type="button"
-                  onClick={() => setVisitType('Telehealth')}
-                  className={`p-2.5 rounded-xl border text-xs font-bold flex items-center justify-center gap-1.5 transition-colors ${
-                    visitType === 'Telehealth'
-                      ? 'bg-teal-700 text-white border-teal-700'
-                      : 'bg-slate-50 text-slate-700 border-slate-200'
-                  }`}
-                >
-                  <Video className="w-3.5 h-3.5" />
-                  <span>MD Telehealth (Video)</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setVisitType('In-Person')}
-                  className={`p-2.5 rounded-xl border text-xs font-bold flex items-center justify-center gap-1.5 transition-colors ${
-                    visitType === 'In-Person'
-                      ? 'bg-teal-700 text-white border-teal-700'
-                      : 'bg-slate-50 text-slate-700 border-slate-200'
-                  }`}
-                >
-                  <Building2 className="w-3.5 h-3.5" />
-                  <span>Columbia, MD Clinic</span>
-                </button>
+                <span className="text-xs text-slate-500">Dr. Barbara Clement Njoku • Maryland Clinic</span>
               </div>
             </div>
 

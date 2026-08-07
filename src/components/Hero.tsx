@@ -70,14 +70,14 @@ export const Hero: React.FC<HeroProps> = ({
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed">
-              Empowering individuals and families across Maryland with personalized psychiatric evaluations, medication management, and holistically tailored mental health support led by <strong className="text-slate-800 font-semibold">{DOCTOR_DATA.name}, DNP, APRN, PMHNP-BC</strong>.
+              Empowering individuals and families across Maryland with personalized psychiatric telehealth evaluations, medication management, and holistically tailored mental health support led by <strong className="text-slate-800 font-semibold">{DOCTOR_DATA.name}</strong>.
             </p>
 
             {/* Quick Feature Highlights Pill Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2 max-w-xl">
               <div className="flex items-center gap-2 p-2 rounded-xl bg-white/70 border border-slate-200/80 shadow-xs text-xs font-medium text-slate-700">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                <span>In-Person & Telehealth</span>
+                <span>Telehealth</span>
               </div>
               <div className="flex items-center gap-2 p-2 rounded-xl bg-white/70 border border-slate-200/80 shadow-xs text-xs font-medium text-slate-700">
                 <ShieldCheck className="w-4 h-4 text-teal-600 flex-shrink-0" />
@@ -132,7 +132,7 @@ export const Hero: React.FC<HeroProps> = ({
               </div>
               <div className="flex items-center gap-1.5">
                 <HeartHandshake className="w-4 h-4 text-emerald-600" />
-                <span>Columbia, MD Clinic</span>
+                <span>Maryland Telehealth</span>
               </div>
             </div>
 
@@ -148,7 +148,7 @@ export const Hero: React.FC<HeroProps> = ({
               
               <div className="relative rounded-2xl overflow-hidden aspect-[3/4] bg-slate-100">
                 <img
-                  src="https://images.pexels.com/photos/6011576/pexels-photo-6011576.jpeg"
+                  src="/hero.jpeg"
                   className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
                   referrerPolicy="no-referrer"
                 />

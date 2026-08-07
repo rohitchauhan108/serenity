@@ -15,7 +15,7 @@ export const CLINIC_INFO = {
   address: '8830 Stanford Blvd, Suite 210, Columbia, MD 21045',
   phone: '(410) 555-0198',
   altPhone: '(443) 555-7821',
-  email: 'care@serenitybehavioralmd.com',
+  email: 'info@serenitybws.com',
   workingHours: [
     { days: 'Monday – Friday', hours: '8:00 AM – 6:00 PM' },
     { days: 'Saturday', hours: '9:00 AM – 2:00 PM (Telehealth Only)' },

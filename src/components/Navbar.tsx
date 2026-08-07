@@ -113,7 +113,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
             <div className="flex items-center gap-1.5 text-emerald-300 bg-emerald-950/50 px-2 py-0.5 rounded-full border border-emerald-500/30">
               <Video className="w-3 h-3" />
-              <span>Telehealth & In-Person</span>
+              <span>Maryland Telehealth</span>
             </div>
           </div>
         </div>

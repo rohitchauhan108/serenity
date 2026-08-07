@@ -42,8 +42,8 @@ export const WhyChooseUs: React.FC = () => {
     },
     {
       icon: Video,
-      title: 'Maryland Telehealth & In-Person',
-      desc: 'Attend visits in our comfortable Columbia, MD clinic or virtually from your home anywhere in Maryland.',
+      title: 'Maryland Telehealth Care',
+      desc: 'Receive virtual psychiatric care securely from the comfort of your home anywhere in Maryland.',
       badge: 'Accessibility'
     },
     {

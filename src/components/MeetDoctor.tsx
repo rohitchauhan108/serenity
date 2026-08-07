@@ -124,24 +124,7 @@ export const MeetDoctor: React.FC<MeetDoctorProps> = ({ openAppointmentModal }) 
               </div>
             </div>
 
-            {/* Quick Education Card */}
-            <div className="glass-card p-6 rounded-2xl border border-slate-200/80 space-y-4">
-              <h4 className="font-heading font-bold text-base text-slate-900 flex items-center gap-2 border-b border-slate-100 pb-3">
-                <GraduationCap className="w-5 h-5 text-teal-600" />
-                Academic Credentials
-              </h4>
-              <div className="space-y-3">
-                {DOCTOR_DATA.education.map((edu, index) => (
-                  <div key={index} className="flex items-start gap-2.5 text-xs">
-                    <div className="w-2 h-2 rounded-full bg-teal-500 mt-1.5 flex-shrink-0" />
-                    <div>
-                      <div className="font-bold text-slate-800">{edu.degree}</div>
-                      <div className="text-slate-500">{edu.institution}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+        
           </div>
 
           {/* Right Column: Bio Narrative & Specialties */}
@@ -185,16 +168,7 @@ export const MeetDoctor: React.FC<MeetDoctorProps> = ({ openAppointmentModal }) 
               </div>
             </div>
 
-            {/* Direct Consultation Trigger */}
-            <div className="pt-4 flex items-center gap-4">
-              <button
-                onClick={openAppointmentModal}
-                className="px-6 py-3.5 rounded-xl text-sm font-bold text-white gradient-teal-blue shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer"
-              >
-                <Calendar className="w-4 h-4" />
-                <span>Book Evaluation with Dr. Njoku</span>
-              </button>
-            </div>
+           
 
           </div>
 

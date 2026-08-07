@@ -161,7 +161,7 @@ export const InformativeCta: React.FC<InformativeCtaProps> = ({
 
                   <div className="flex items-center justify-between py-2 border-b border-white/5">
                     <span className="text-slate-400 font-medium">Location:</span>
-                    <span className="text-white font-bold">Columbia, MD Clinic or Telehealth</span>
+                    <span className="text-white font-bold">Maryland Telehealth</span>
                   </div>
 
                   <div className="flex items-center justify-between py-2 border-b border-white/5">
@@ -206,7 +206,7 @@ export const InformativeCta: React.FC<InformativeCtaProps> = ({
           <div className="lg:col-span-7 relative h-64 sm:h-80 rounded-3xl overflow-hidden border border-white/10 shadow-xl group">
             <Image
               src="https://images.pexels.com/photos/7176043/pexels-photo-7176043.jpeg"
-              alt="Telehealth & In-Person Care at Serenity Behavioral"
+              alt="Telehealth Care at Serenity Behavioral"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700"
               referrerPolicy="no-referrer"

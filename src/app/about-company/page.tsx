@@ -41,7 +41,7 @@ export default function AboutCompanyPage() {
     { label: 'Established', value: 'Since 2012', desc: 'Serving Columbia & Maryland statewide' },
     { label: 'ANCC Board Certified', value: '100% Certified', desc: 'Highest national psychiatric credentialing' },
     { label: 'Patient Privacy', value: 'HIPAA Compliant', desc: 'Encrypted EHR & confidential telehealth' },
-    { label: 'Care Delivery', value: 'Hybrid Model', desc: 'In-person clinic & statewide telehealth' }
+    { label: 'Care Delivery', value: 'Telehealth Only', desc: 'Statewide telehealth psychiatric care' }
   ];
 
   const clinicPillars = [
@@ -78,7 +78,7 @@ export default function AboutCompanyPage() {
       icon: Zap,
       title: 'Statewide Telehealth & Facility',
       subtitle: 'Eliminating geographic & scheduling barriers across Maryland.',
-      description: 'Mental health support should fit seamlessly into your life. Whether you prefer in-person visits at our quiet Columbia office or flexible telehealth from the comfort of your home anywhere in Maryland, care is always accessible.',
+      description: 'Mental health support should fit seamlessly into your life. Flexible telehealth from the comfort of your home anywhere in Maryland, care is always accessible.',
       highlights: [
         'Secure HIPAA-encrypted HD video portal',
         'Easy electronic intake & portal communication',
