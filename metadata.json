@@ -1,0 +1,6 @@
+{
+  "name": "Serenity Behavioral & Wellness Services",
+  "description": "Premium Mental Health & Psychiatric Wellness Clinic website for Serenity Behavioral & Wellness Services LLC led by Dr. Barbara Clement Njoku, DNP, APRN, PMHNP-BC in Maryland.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
