@@ -13,7 +13,7 @@ export const CLINIC_INFO = {
   shortName: 'Serenity Behavioral',
   location: 'Maryland, USA',
   address: '8830 Stanford Blvd, Suite 210, Columbia, MD 21045',
-  phone: '(410) 555-0198',
+  phone: '301 793 0825',
   altPhone: '(443) 555-7821',
   email: 'info@serenitybws.com',
   workingHours: [

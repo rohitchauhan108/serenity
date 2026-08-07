@@ -390,7 +390,7 @@ export default function DrBarbaraPage() {
                 Ready to Begin Your Care Journey with Dr. Barbara?
               </h3>
               <p className="text-slate-200 text-sm max-w-xl mx-auto">
-                Schedule a confidential in-person or telehealth consultation today. Flexible appointments available in Columbia, MD.
+                Schedule a confidential online consultation today. Flexible telehealth appointments are available in Baltimore.
               </p>
               <Link
                 href="/contact"

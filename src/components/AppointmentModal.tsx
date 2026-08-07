@@ -17,13 +17,15 @@ interface AppointmentModalProps {
   onClose: () => void;
   presetServiceTitle?: string;
   initialServiceName?: string;
+  showVisitOptions?: boolean;
 }
 
 export const AppointmentModal: React.FC<AppointmentModalProps> = ({
   isOpen,
   onClose,
   presetServiceTitle = '',
-  initialServiceName = ''
+  initialServiceName = '',
+  showVisitOptions = true
 }) => {
   const initialTitle = initialServiceName || presetServiceTitle || '';
   const [fullName, setFullName] = useState('');

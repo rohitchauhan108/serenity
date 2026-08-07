@@ -416,7 +416,7 @@ export default function AboutCompanyPage() {
                 <div className="pt-4 border-t border-slate-700 space-y-3">
                   <div className="flex items-center gap-3 text-xs text-slate-300">
                     <MapPin className="w-4 h-4 text-teal-400 flex-shrink-0" />
-                    <span>Columbia, Howard County, MD 21044</span>
+                    <span>Baltimore</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs text-slate-300">
                     <Phone className="w-4 h-4 text-teal-400 flex-shrink-0" />

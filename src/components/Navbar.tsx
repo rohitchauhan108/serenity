@@ -184,7 +184,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       <Sparkles className="w-3.5 h-3.5 text-teal-600" />
                       Discover Serenity
                     </span>
-                    <span className="text-[10px] text-slate-500 font-medium">Columbia, MD</span>
+                    <span className="text-[10px] text-slate-500 font-medium">Baltimore</span>
                   </div>
 
                   <Link

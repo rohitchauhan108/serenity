@@ -109,7 +109,7 @@ export default function ContactPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-teal-300">Columbia, MD Clinic</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-teal-300">Baltimore</span>
                     <p className="font-heading font-bold text-sm">Dedicated Patient Support</p>
                   </div>
                 </div>
@@ -268,7 +268,7 @@ export default function ContactPage() {
                       <MapPin className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
                       <div>
                         <strong className="block text-slate-900 font-extrabold">Serenity Behavioral & Wellness Services</strong>
-                        <span className="text-slate-600">Columbia, Howard County, MD 21044</span>
+                        <span className="text-slate-600">Baltimore</span>
                       </div>
                     </div>
 

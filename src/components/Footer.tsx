@@ -103,7 +103,7 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="space-y-2 text-xs text-slate-300 pt-2">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-teal-400 flex-shrink-0" />
-                <span>Columbia, Howard County, MD 21044</span>
+                <span>Baltimore</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-teal-400 flex-shrink-0" />
