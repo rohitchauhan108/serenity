@@ -241,7 +241,7 @@ export default function AboutCompanyPage() {
               <div className="lg:col-span-6 relative">
                 <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 bg-white aspect-[4/3]">
                   <img 
-                    src={CLINIC_INFO.heroBannerUrl} 
+                    src="https://images.pexels.com/photos/5700150/pexels-photo-5700150.jpeg" 
                     alt="Serenity Behavioral Clinic Interior" 
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
