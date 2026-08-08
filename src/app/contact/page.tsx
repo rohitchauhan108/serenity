@@ -102,7 +102,7 @@ export default function ContactPage() {
               <div className="lg:col-span-4 hidden lg:block">
                 <div className="relative rounded-3xl overflow-hidden border border-teal-500/30 shadow-2xl aspect-[4/3]">
                   <img
-                    src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800"
+                    src="https://img.magnific.com/free-photo/african-american-psychologist-talking-patient-appointment-her-office_637285-9931.jpg?t=st=1786168706~exp=1786172306~hmac=5c9a8d905f50ca4cc0c26a1ad10e1d9f9860ce8585cde55ef2d41348290dfab5&w=2000"
                     alt="Medical Reception & Telehealth Desk"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
