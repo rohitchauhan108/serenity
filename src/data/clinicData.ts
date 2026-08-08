@@ -33,7 +33,7 @@ export const DOCTOR_DATA: DoctorInfo = {
   titles: 'DNP, APRN, PMHNP-BC',
   degrees: ['Doctor of Nursing Practice (DNP)', 'Master of Science in Nursing (MSN)', 'PMHNP-BC Board Certified'],
   anccCertified: true,
-  yearsExperience: '12+ Years Clinical Excellence',
+  yearsExperience: '12 Years Clinical Excellence',
   doctorPortraitUrl: '/Dr-barbara-clement-njoku.webp',
   bio: [
     'Dr. Barbara Clement Njoku, DNP, APRN, PMHNP-BC, is a board-certified Psychiatric-Mental Health Nurse Practitioner dedicated to delivering compassionate, evidence-based mental health care to individuals and families across the lifespan.',

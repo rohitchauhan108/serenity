@@ -18,6 +18,7 @@ import {
   GraduationCap
 } from 'lucide-react';
 import { CLINIC_INFO, SERVICES_DATA } from '../data/clinicData';
+import { useLenis, scrollToElement } from './SmoothScroll';
 
 interface FooterProps {
   setActiveTab?: (tab: string) => void;
@@ -35,6 +36,7 @@ export const Footer: React.FC<FooterProps> = ({
 
   const router = useRouter();
   const pathname = usePathname();
+  const lenis = useLenis();
 
   const handleNewsletter = (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,10 +53,7 @@ export const Footer: React.FC<FooterProps> = ({
     if (setActiveTab) {
       setActiveTab(id);
     }
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToElement(lenis, id, 120);
   };
 
   return (

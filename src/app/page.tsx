@@ -14,6 +14,7 @@ import { InformativeCta } from '../components/InformativeCta';
 import { Footer } from '../components/Footer';
 import { AppointmentModal } from '../components/AppointmentModal';
 import { LegalModal, SelfCheckModal } from '../components/AdditionalPages';
+import { useLenis, scrollToElement } from '../components/SmoothScroll';
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState<string>('home');
@@ -22,6 +23,8 @@ export default function HomePage() {
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(null);
   const [legalModalType, setLegalModalType] = useState<'privacy' | 'terms' | null>(null);
   const [isSelfCheckOpen, setIsSelfCheckOpen] = useState(false);
+
+  const lenis = useLenis();
 
   const openAppointmentModal = (serviceName?: string) => {
     if (serviceName) {
@@ -34,10 +37,7 @@ export default function HomePage() {
 
   const scrollToSection = (id: string) => {
     setActiveTab(id);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToElement(lenis, id, 120);
   };
 
   return (

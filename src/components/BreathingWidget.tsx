@@ -113,16 +113,16 @@ export const BreathingWidget: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Animated Floating Statistics Header Bar */}
-        <div className="mb-20 grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mb-20 grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="bg-white p-6 rounded-3xl border border-teal-100/90 text-center hover:scale-105 hover:shadow-xl hover:border-teal-300 transition-all duration-300">
             <div className="w-12 h-12 rounded-2xl bg-teal-100 text-teal-800 flex items-center justify-center mx-auto mb-3 font-bold">
               <Award className="w-6 h-6 text-teal-700" />
             </div>
             <div className="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900">
-              12+ Yrs
+              12 Yrs
             </div>
             <div className="text-xs font-semibold text-slate-600 mt-1">
-              Clinical Psychiatric Experience
+              Clinical  Experience
             </div>
           </div>
 
@@ -138,17 +138,6 @@ export const BreathingWidget: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white p-6 rounded-3xl border border-teal-100/90 text-center hover:scale-105 hover:shadow-xl hover:border-teal-300 transition-all duration-300">
-            <div className="w-12 h-12 rounded-2xl bg-purple-100 text-purple-800 flex items-center justify-center mx-auto mb-3 font-bold">
-              <Users className="w-6 h-6 text-purple-700" />
-            </div>
-            <div className="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900">
-              5,000+
-            </div>
-            <div className="text-xs font-semibold text-slate-600 mt-1">
-              Consultations Conducted
-            </div>
-          </div>
 
           <div className="bg-white p-6 rounded-3xl border border-teal-100/90 text-center hover:scale-105 hover:shadow-xl hover:border-teal-300 transition-all duration-300">
             <div className="w-12 h-12 rounded-2xl bg-blue-100 text-blue-800 flex items-center justify-center mx-auto mb-3 font-bold">

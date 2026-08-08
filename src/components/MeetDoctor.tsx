@@ -63,7 +63,7 @@ export const MeetDoctor: React.FC<MeetDoctorProps> = ({ openAppointmentModal }) 
     {
       icon: Sparkles,
       category: 'Active Leadership & Expansion',
-      highlights: ['Statewide HIPAA Telehealth', 'In-Network Insurance Growth', '12+ Years Clinical Excellence'],
+      highlights: ['Statewide HIPAA Telehealth', 'In-Network Insurance Growth', '12 Years Clinical Excellence'],
       badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-400/30',
       nodeGradient: 'from-amber-400 to-emerald-500',
     },
@@ -188,7 +188,7 @@ export const MeetDoctor: React.FC<MeetDoctorProps> = ({ openAppointmentModal }) 
             <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4 relative z-10">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-900/80 border border-teal-400/40 text-teal-300 text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-inner">
                 <Clock className="w-4 h-4 text-teal-300" />
-                <span>12+ Years of Clinical Evolution</span>
+                <span>12 Years of Clinical Evolution</span>
               </div>
               <h3 className="font-heading text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
                 Clinical Milestones & Evolution

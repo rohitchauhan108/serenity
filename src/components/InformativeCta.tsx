@@ -92,7 +92,7 @@ export const InformativeCta: React.FC<InformativeCtaProps> = ({
                     <Award className="w-4 h-4 text-teal-400" />
                   </div>
                   <p className="text-xs text-teal-200 font-medium">{DOCTOR_DATA.titles}</p>
-                  <p className="text-[11px] text-slate-300 mt-0.5">12+ Years Experience • ANCC Board Certified</p>
+                  <p className="text-[11px] text-slate-300 mt-0.5">12 Years Experience • ANCC Board Certified</p>
                 </div>
               </div>
 

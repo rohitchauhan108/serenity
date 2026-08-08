@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import {
   Calendar,
@@ -29,8 +29,15 @@ export const Hero: React.FC<HeroProps> = ({
   scrollToSection,
   openSelfCheckModal
 }) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const t = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(t);
+  }, []);
+
   return (
-    <section id="home" className="relative overflow-hidden bg-gradient-to-b from-teal-50/60 via-slate-50 to-white pt-8 pb-16 lg:pt-12 lg:pb-24">
+    <section id="home" className={`relative overflow-hidden bg-gradient-to-b from-teal-50/60 via-slate-50 to-white pt-6 sm:pt-10 pb-16 lg:pt-12 lg:pb-24 transition-all duration-700 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
       {/* Organic Animated Floating Gradient Blobs & Soft Shapes */}
       <div className="absolute top-10 left-1/4 w-96 h-96 bg-teal-200/40 rounded-full blur-3xl pointer-events-none animate-pulse-soft" />
       <div className="absolute top-1/3 right-10 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl pointer-events-none animate-float-slow" />
@@ -148,7 +155,7 @@ export const Hero: React.FC<HeroProps> = ({
               
               <div className="relative rounded-2xl overflow-hidden aspect-[3/4] bg-slate-100">
                 <img
-                  src="/hero.jpeg"
+                  src="/hero.png"
                   className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
                   referrerPolicy="no-referrer"
                 />
@@ -160,27 +167,9 @@ export const Hero: React.FC<HeroProps> = ({
                 </div>
               </div>
 
-              {/* Floating Glass Badge Top Left */}
-              <div className="absolute -top-4 -left-4 glass-card p-3 rounded-2xl shadow-xl flex items-center gap-3 max-w-[200px] border border-white/90">
-                <div className="p-2 bg-teal-500 text-white rounded-xl shadow-xs">
-                  <Award className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-[11px] font-bold text-slate-800 leading-tight">ANCC Certified</div>
-                  <div className="text-[10px] text-teal-800 font-semibold">Doctor of Nursing Practice</div>
-                </div>
-              </div>
+             
 
-              {/* Floating Glass Badge Bottom Right */}
-              <div className="absolute -bottom-4 -right-4 glass-card p-3.5 rounded-2xl shadow-xl flex items-center gap-3 border border-white/90">
-                <div className="p-2 bg-emerald-500 text-white rounded-xl shadow-xs">
-                  <Heart className="w-5 h-5 fill-current" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-slate-900">Patient-Centered</div>
-                  <div className="text-[10px] text-slate-500">Evidence-Based Care</div>
-                </div>
-              </div>
+              
 
             </div>
 

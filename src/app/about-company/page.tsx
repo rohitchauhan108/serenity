@@ -140,7 +140,7 @@ export default function AboutCompanyPage() {
                 </h1>
 
                 <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-                  A premier outpatient psychiatric medical practice in Columbia, Maryland, dedicated to delivering integrative, compassionate, and board-certified mental health evaluations, medication management, and supportive care.
+                  A premier outpatient psychiatric medical practice in Baltimore dedicated to delivering integrative, compassionate, and board-certified mental health evaluations, medication management, and supportive care.
                 </p>
 
                 <div className="pt-2 flex flex-wrap gap-4 items-center">
@@ -385,7 +385,7 @@ export default function AboutCompanyPage() {
                 </h2>
 
                 <p className="text-slate-300 text-base leading-relaxed">
-                  Located in the heart of Columbia, Maryland, our facility offers easy highway access, ample private parking, and a peaceful environment structured to make your mental health appointments as calm and stress-free as possible.
+                  Located in the heart of Baltimore, our facility offers easy highway access, ample private parking, and a peaceful environment structured to make your mental health appointments as calm and stress-free as possible.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">

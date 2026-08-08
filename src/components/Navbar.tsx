@@ -25,6 +25,7 @@ import {
   GraduationCap
 } from 'lucide-react';
 import { CLINIC_INFO, SERVICES_DATA } from '../data/clinicData';
+import { useLenis, scrollToElement } from './SmoothScroll';
 
 interface NavbarProps {
   activeTab?: string;
@@ -45,11 +46,14 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileAboutSubmenuOpen, setMobileAboutSubmenuOpen] = useState(false);
   const [mobileServicesSubmenuOpen, setMobileServicesSubmenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const router = useRouter();
   const pathname = usePathname();
+  const lenis = useLenis();
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       if (window.scrollY > 20) {
         setIsScrolled(true);
@@ -57,7 +61,8 @@ export const Navbar: React.FC<NavbarProps> = ({
         setIsScrolled(false);
       }
     };
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -65,7 +70,20 @@ export const Navbar: React.FC<NavbarProps> = ({
     setMobileMenuOpen(false);
     setMobileAboutSubmenuOpen(false);
     setMobileServicesSubmenuOpen(false);
+    setAboutDropdownOpen(false);
+    setServicesDropdownOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else if (mounted) {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen, mounted]);
 
   const handleNavClick = (id: string, path?: string) => {
     setMobileMenuOpen(false);
@@ -85,14 +103,14 @@ export const Navbar: React.FC<NavbarProps> = ({
     if (setActiveTab) {
       setActiveTab(id);
     }
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToElement(lenis, id, 120);
   };
 
   return (
-    <header className="sticky top-0 z-50 transition-all duration-300 font-sans">
+    <header
+      className="sticky top-0 z-[100] transition-all duration-300 font-sans"
+      style={{ willChange: 'transform' }}
+    >
       {/* Top Crisis & Quick Contact Bar */}
       <div className="bg-gradient-to-r from-teal-900 via-teal-800 to-slate-900 text-white text-xs sm:text-sm py-2 px-4 shadow-sm">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
@@ -109,7 +127,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </a>
             <div className="flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-teal-300" />
-              <span>Columbia, Maryland</span>
+              <span>Baltimore</span>
             </div>
             <div className="flex items-center gap-1.5 text-emerald-300 bg-emerald-950/50 px-2 py-0.5 rounded-full border border-emerald-500/30">
               <Video className="w-3 h-3" />
@@ -120,11 +138,13 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* Main Glass Navbar */}
-      <nav className={`transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-slate-200/80 py-3' 
-          : 'bg-white/90 backdrop-blur-sm border-b border-slate-100 py-4'
-      }`}>
+      <nav
+        className={`sticky top-0 transition-all duration-300 ${
+          isScrolled 
+            ? 'bg-white/97 backdrop-blur-xl shadow-xl border-b border-slate-200/80 py-3 sm:py-3.5' 
+            : 'bg-white/95 backdrop-blur-md border-b border-slate-100 py-4 sm:py-5'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
           {/* Brand Logo */}
@@ -132,11 +152,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             href="/"
             className="flex items-center gap-3 group text-left focus:outline-none"
           >
-            <div className="relative h-16 sm:h-24 overflow-hidden group-hover:scale-110 transition-transform duration-300">
+            <div className="relative h-20 sm:h-28 md:h-32 lg:h-36 overflow-hidden group-hover:scale-105 transition-transform duration-300">
               <img 
                 src={CLINIC_INFO.logoUrl} 
                 alt="Serenity Behavioral & Wellness Services Logo" 
                 className="w-full h-full object-contain"
+                referrerPolicy="no-referrer"
               />
             </div>
           </Link>
@@ -230,7 +251,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       <Shield className="w-3.5 h-3.5 text-teal-600" />
                       ANCC Board Certified
                     </span>
-                    <span className="text-[11px] font-bold text-teal-700">12+ Yrs Exp</span>
+                    <span className="text-[11px] font-bold text-teal-700">12 Yrs Exp</span>
                   </div>
                 </div>
               </div>
@@ -350,119 +371,148 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
 
+        {/* Mobile Navigation Drawer Backdrop */}
+        {mobileMenuOpen && (
+          <div 
+            className="md:hidden fixed inset-0 z-[9998] bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+        )}
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 shadow-xl animate-in slide-in-from-top duration-200 max-h-[calc(100vh-6rem)] overflow-y-auto">
-            <div className="flex flex-col gap-1">
-              
-              <Link
-                href="/"
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-3 rounded-xl text-left font-semibold text-sm text-slate-700 hover:bg-slate-50"
-              >
-                Home
-              </Link>
-
-              {/* Mobile About Submenu Expandable */}
-              <div>
-                <button
-                  onClick={() => setMobileAboutSubmenuOpen(!mobileAboutSubmenuOpen)}
-                  className="w-full px-4 py-3 rounded-xl text-left font-semibold text-sm text-slate-800 hover:bg-slate-50 flex items-center justify-between"
-                >
-                  <span>About Us</span>
-                  <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform ${mobileAboutSubmenuOpen ? 'rotate-180' : ''}`} />
-                </button>
-
-                {mobileAboutSubmenuOpen && (
-                  <div className="ml-4 pl-3 border-l-2 border-teal-200 my-1 space-y-1">
-                    <Link
-                      href="/about-company"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-2.5 rounded-lg text-xs font-bold text-slate-800 hover:bg-teal-50 hover:text-teal-900"
-                    >
-                      🏢 About the Company
-                      <span className="block font-normal text-[11px] text-slate-500 mt-0.5">Clinic overview, mission & facility</span>
-                    </Link>
-                    <Link
-                      href="/dr-barbara"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-2.5 rounded-lg text-xs font-bold text-slate-800 hover:bg-teal-50 hover:text-teal-900"
-                    >
-                      👩‍⚕️ Dr. Barbara Clement Njoku
-                      <span className="block font-normal text-[11px] text-slate-500 mt-0.5">DNP, PMHNP-BC credentials & philosophy</span>
-                    </Link>
+          <div className="md:hidden fixed inset-x-0 top-0 z-[9999] bg-white shadow-2xl border-b border-slate-200 animate-in slide-in-from-top duration-300" style={{ marginTop: '0px' }}>
+            <div className="px-4 pt-[max(env(safe-area-inset-top),12px)] pb-6 max-h-[100dvh] overflow-y-auto overscroll-contain">
+              <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+                <div className="flex items-center gap-2">
+                  <div className="h-10 overflow-hidden">
+                    <img 
+                      src={CLINIC_INFO.logoUrl} 
+                      alt="Serenity Logo" 
+                      className="w-full h-full object-contain"
+                      referrerPolicy="no-referrer"
+                    />
                   </div>
-                )}
-              </div>
-
-              {/* Mobile Services Submenu Expandable */}
-              <div>
+                  <span className="font-heading font-extrabold text-sm text-slate-800">Menu</span>
+                </div>
                 <button
-                  onClick={() => setMobileServicesSubmenuOpen(!mobileServicesSubmenuOpen)}
-                  className="w-full px-4 py-3 rounded-xl text-left font-semibold text-sm text-slate-800 hover:bg-slate-50 flex items-center justify-between"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="p-2.5 rounded-xl border-2 border-slate-200 text-slate-700 hover:bg-slate-50 active:bg-slate-100 transition-colors"
+                  aria-label="Close menu"
                 >
-                  <span>Services</span>
-                  <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform ${mobileServicesSubmenuOpen ? 'rotate-180' : ''}`} />
+                  <X className="w-5 h-5" />
                 </button>
+              </div>
+              <div className="flex flex-col gap-1">
+                
+                <Link
+                  href="/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-4 py-3.5 rounded-xl text-left font-bold text-base text-slate-900 hover:bg-slate-50 active:bg-slate-100"
+                >
+                  Home
+                </Link>
 
-                {mobileServicesSubmenuOpen && (
-                  <div className="ml-4 pl-3 border-l-2 border-teal-200 my-1 space-y-1">
-                    <Link
-                      href="/services"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-2 rounded-lg text-xs font-bold text-teal-800 hover:bg-teal-50 bg-teal-50/50 mb-1"
-                    >
-                      ✨ All Services Overview
-                    </Link>
-                    {SERVICES_DATA.map((srv) => (
+                {/* Mobile About Submenu Expandable */}
+                <div className="w-full">
+                  <button
+                    onClick={() => setMobileAboutSubmenuOpen(!mobileAboutSubmenuOpen)}
+                    className="w-full px-4 py-3 rounded-xl text-left font-semibold text-sm text-slate-800 hover:bg-slate-50 active:bg-slate-100 flex items-center justify-between"
+                  >
+                    <span>About Us</span>
+                    <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-300 ${mobileAboutSubmenuOpen ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  <div className={`overflow-hidden transition-all duration-300 ease-out ${mobileAboutSubmenuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="ml-4 pl-3 border-l-2 border-teal-200 my-1 space-y-1">
                       <Link
-                        key={srv.id}
-                        href={`/services/${srv.id}`}
+                        href="/about-company"
                         onClick={() => setMobileMenuOpen(false)}
-                        className="block px-3 py-2.5 rounded-lg text-xs font-bold text-slate-800 hover:bg-teal-50 hover:text-teal-900"
+                        className="block px-3 py-2.5 rounded-lg text-sm font-bold text-slate-900 hover:bg-teal-50 hover:text-teal-900 active:bg-teal-100"
                       >
-                        {srv.title}
-                        <span className="block font-normal text-[11px] text-slate-500 mt-0.5 line-clamp-1">{srv.shortDesc}</span>
+                        About the Company
+                        <span className="block font-normal text-xs text-slate-500 mt-0.5">Clinic overview, mission & facility</span>
                       </Link>
-                    ))}
+                      <Link
+                        href="/dr-barbara"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block px-3 py-2.5 rounded-lg text-sm font-bold text-slate-900 hover:bg-teal-50 hover:text-teal-900 active:bg-teal-100"
+                      >
+                        Dr. Barbara Clement Njoku
+                        <span className="block font-normal text-xs text-slate-500 mt-0.5">DNP, PMHNP-BC credentials & philosophy</span>
+                      </Link>
+                    </div>
                   </div>
-                )}
-              </div>
+                </div>
 
-              <Link
-                href="/conditions"
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-3 rounded-xl text-left font-semibold text-sm text-slate-700 hover:bg-slate-50"
-              >
-                Conditions We Treat
-              </Link>
+                {/* Mobile Services Submenu Expandable */}
+                <div className="w-full">
+                  <button
+                    onClick={() => setMobileServicesSubmenuOpen(!mobileServicesSubmenuOpen)}
+                    className="w-full px-4 py-3 rounded-xl text-left font-semibold text-sm text-slate-800 hover:bg-slate-50 active:bg-slate-100 flex items-center justify-between"
+                  >
+                    <span>Services</span>
+                    <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-300 ${mobileServicesSubmenuOpen ? 'rotate-180' : ''}`} />
+                  </button>
 
-              <Link
-                href="/contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-3 rounded-xl text-left font-semibold text-sm text-slate-700 hover:bg-slate-50"
-              >
-                Contact Us
-              </Link>
+                  <div className={`overflow-hidden transition-all duration-300 ease-out ${mobileServicesSubmenuOpen ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="ml-4 pl-3 border-l-2 border-teal-300 my-2 space-y-1.5">
+                      <Link
+                        href="/services"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block px-3 py-3 rounded-xl text-sm font-extrabold text-teal-900 bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-200 mb-2 hover:from-teal-100 hover:to-emerald-100"
+                      >
+                        ✨ View All Services
+                      </Link>
+                      {SERVICES_DATA.map((srv) => (
+                        <Link
+                          key={srv.id}
+                          href={`/services/${srv.id}`}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="block px-3 py-3 rounded-xl text-sm font-bold text-slate-900 hover:bg-teal-50 active:bg-teal-100 border border-transparent hover:border-teal-100"
+                        >
+                          <div className="font-bold text-slate-900 leading-tight">{srv.title}</div>
+                          <div className="font-normal text-xs text-slate-500 mt-1 line-clamp-2 leading-snug">{srv.shortDesc}</div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
 
-              <div className="mt-4 pt-4 border-t border-slate-100 flex flex-col gap-2.5">
-                <a
-                  href={`tel:${CLINIC_INFO.phone}`}
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-teal-200 text-teal-800 font-bold text-sm bg-teal-50/50"
+                <Link
+                  href="/conditions"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-4 py-3 rounded-xl text-left font-semibold text-sm text-slate-800 hover:bg-slate-50 active:bg-slate-100"
                 >
-                  <Phone className="w-4 h-4 text-teal-600" />
-                  <span>Call {CLINIC_INFO.phone}</span>
-                </a>
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    openAppointmentModal();
-                  }}
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-white font-bold text-sm gradient-teal-blue shadow-md"
+                  Conditions We Treat
+                </Link>
+
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-4 py-3 rounded-xl text-left font-semibold text-sm text-slate-800 hover:bg-slate-50 active:bg-slate-100"
                 >
-                  <Calendar className="w-4 h-4" />
-                  <span>Book Consultation</span>
-                </button>
+                  Contact Us
+                </Link>
+
+                <div className="mt-4 pt-4 border-t border-slate-100 flex flex-col gap-2.5">
+                  <a
+                    href={`tel:${CLINIC_INFO.phone}`}
+                    className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl border-2 border-teal-200 text-teal-800 font-bold text-sm bg-teal-50 hover:bg-teal-100 active:bg-teal-150"
+                  >
+                    <Phone className="w-4 h-4 text-teal-600" />
+                    <span>Call {CLINIC_INFO.phone}</span>
+                  </a>
+                  <button
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      setTimeout(() => openAppointmentModal(), 100);
+                    }}
+                    className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-white font-bold text-sm gradient-teal-blue shadow-lg hover:shadow-xl active:scale-[0.98] transition-transform"
+                  >
+                    <Calendar className="w-4 h-4" />
+                    <span>Book Consultation</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

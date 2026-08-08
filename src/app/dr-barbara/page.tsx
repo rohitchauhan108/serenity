@@ -140,7 +140,7 @@ export default function DrBarbaraPage() {
                     </p>
                     <div className="mt-3 inline-flex items-center gap-2 text-xs font-medium text-slate-300 bg-white/10 px-3 py-1.5 rounded-xl">
                       <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                      <span>12+ Years Clinical Excellence in MD</span>
+                      <span>12 Years Clinical Excellence in MD</span>
                     </div>
                   </div>
                 </div>
@@ -246,7 +246,7 @@ export default function DrBarbaraPage() {
                   <Briefcase className="w-6 h-6" />
                 </div>
                 <h3 className="font-heading font-extrabold text-xl text-slate-900">
-                  12+ Years Clinical Excellence
+                  12 Years Clinical Excellence
                 </h3>
                 <p className="text-xs font-semibold text-teal-800">Outpatient & Inpatient Clinical Practice</p>
                 <p className="text-slate-600 text-sm leading-relaxed">
@@ -320,7 +320,7 @@ export default function DrBarbaraPage() {
               <div className="flex flex-wrap justify-center gap-2 pt-4">
                 {[
                   { id: 'all', label: 'All Conditions' },
-                  { id: 'adolescents', label: 'Adolescents (12+)' },
+                  { id: 'adolescents', label: 'Adolescents (12)' },
                   { id: 'adults', label: 'Adult Psychiatry' },
                   { id: 'seniors', label: 'Seniors & Geriatric' }
                 ].map((tab) => (
