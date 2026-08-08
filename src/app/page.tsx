@@ -1,28 +1,33 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Navbar } from '../components/Navbar';
-import { Hero } from '../components/Hero';
-import { AboutSerenity } from '../components/AboutSerenity';
-import { MeetDoctor } from '../components/MeetDoctor';
-import { ConditionsSection } from '../components/ConditionsSection';
-import { TreatmentProcess } from '../components/TreatmentProcess';
-import { BreathingWidget } from '../components/BreathingWidget';
-import { TestimonialsSection } from '../components/TestimonialsSection';
-import { FaqSection } from '../components/FaqSection';
-import { InformativeCta } from '../components/InformativeCta';
-import { Footer } from '../components/Footer';
-import { AppointmentModal } from '../components/AppointmentModal';
-import { LegalModal, SelfCheckModal } from '../components/AdditionalPages';
-import { useLenis, scrollToElement } from '../components/SmoothScroll';
-import InsuranceSection from '@/components/InsuranceSection';
+import React, { useState } from "react";
+import { Navbar } from "../components/Navbar";
+import { Hero } from "../components/Hero";
+import { AboutSerenity } from "../components/AboutSerenity";
+import { MeetDoctor } from "../components/MeetDoctor";
+import { ConditionsSection } from "../components/ConditionsSection";
+import { TreatmentProcess } from "../components/TreatmentProcess";
+import { BreathingWidget } from "../components/BreathingWidget";
+import { TestimonialsSection } from "../components/TestimonialsSection";
+import { FaqSection } from "../components/FaqSection";
+import { InformativeCta } from "../components/InformativeCta";
+import { Footer } from "../components/Footer";
+import { AppointmentModal } from "../components/AppointmentModal";
+import { LegalModal, SelfCheckModal } from "../components/AdditionalPages";
+import { useLenis, scrollToElement } from "../components/SmoothScroll";
+import InsuranceSection from "@/components/InsuranceSection";
+import OurTreatment from "@/components/OurTreatment";
 
 export default function HomePage() {
-  const [activeTab, setActiveTab] = useState<string>('home');
+  const [activeTab, setActiveTab] = useState<string>("home");
   const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
-  const [appointmentPresetService, setAppointmentPresetService] = useState('');
-  const [selectedServiceId, setSelectedServiceId] = useState<string | null>(null);
-  const [legalModalType, setLegalModalType] = useState<'privacy' | 'terms' | null>(null);
+  const [appointmentPresetService, setAppointmentPresetService] = useState("");
+  const [selectedServiceId, setSelectedServiceId] = useState<string | null>(
+    null,
+  );
+  const [legalModalType, setLegalModalType] = useState<
+    "privacy" | "terms" | null
+  >(null);
   const [isSelfCheckOpen, setIsSelfCheckOpen] = useState(false);
 
   const lenis = useLenis();
@@ -31,7 +36,7 @@ export default function HomePage() {
     if (serviceName) {
       setAppointmentPresetService(serviceName);
     } else {
-      setAppointmentPresetService('');
+      setAppointmentPresetService("");
     }
     setIsAppointmentModalOpen(true);
   };
@@ -43,7 +48,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 font-sans selection:bg-teal-500/20 selection:text-teal-900">
-      
       {/* Navbar Header */}
       <Navbar
         activeTab={activeTab}
@@ -60,12 +64,11 @@ export default function HomePage() {
           scrollToSection={scrollToSection}
           openSelfCheckModal={() => setIsSelfCheckOpen(true)}
         />
-
+        <OurTreatment />
         {/* About Serenity */}
         <AboutSerenity />
 
-        <InsuranceSection/>
-        
+        <InsuranceSection />
 
         {/* Meet Doctor: Dr. Barbara Clement Njoku */}
         <MeetDoctor openAppointmentModal={() => openAppointmentModal()} />
@@ -83,8 +86,7 @@ export default function HomePage() {
         {/* Interactive Breathing & Wellness Widget */}
         <BreathingWidget />
 
-
-         <InformativeCta
+        <InformativeCta
           openAppointmentModal={() => openAppointmentModal()}
           openSelfCheckModal={() => setIsSelfCheckOpen(true)}
         />
@@ -125,7 +127,6 @@ export default function HomePage() {
         onClose={() => setIsSelfCheckOpen(false)}
         openAppointmentModal={() => openAppointmentModal()}
       />
-
     </div>
   );
 }
