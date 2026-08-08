@@ -15,6 +15,7 @@ import { Footer } from '../components/Footer';
 import { AppointmentModal } from '../components/AppointmentModal';
 import { LegalModal, SelfCheckModal } from '../components/AdditionalPages';
 import { useLenis, scrollToElement } from '../components/SmoothScroll';
+import InsuranceSection from '@/components/InsuranceSection';
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState<string>('home');
@@ -62,6 +63,9 @@ export default function HomePage() {
 
         {/* About Serenity */}
         <AboutSerenity />
+
+        <InsuranceSection/>
+        
 
         {/* Meet Doctor: Dr. Barbara Clement Njoku */}
         <MeetDoctor openAppointmentModal={() => openAppointmentModal()} />

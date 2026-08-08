@@ -4,7 +4,6 @@ import {
   ConditionItem,
   InsuranceItem,
   TestimonialItem,
-  BlogPost,
   FaqItem
 } from '../types';
 
@@ -155,17 +154,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     isPopular: false,
     imageUrl: 'https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?auto=format&fit=crop&w=1200&q=80'
   },
-  {
-    id: 'adhd-treatment',
-    title: 'ADHD Assessment & Care (Adult & Child)',
-    category: 'evaluation',
-    shortDesc: 'Comprehensive neurodevelopmental screening, focus enhancement strategies, and non-stimulant or stimulant medication management.',
-    fullDesc: 'Attention-Deficit/Hyperactivity Disorder affects executive function at all ages. We offer structured diagnostic evaluations and multi-modal treatment plans for work, school, and home success.',
-    keyBenefits: ['Objective diagnostic screening', 'Executive function coaching concepts', 'Tailored medication management', 'Work & academic accommodation guidance'],
-    iconName: 'Zap',
-    isPopular: true,
-    imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80'
-  },
+ 
   {
     id: 'ptsd-trauma',
     title: 'PTSD & Trauma Therapy',
@@ -230,7 +219,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     keyBenefits: ['Polypharmacy interaction checks', 'Caregiver coordination', 'Memory & mood stabilization', 'Comfortable telehealth or clinic visits'],
     iconName: 'HeartHandshake',
     isPopular: false,
-    imageUrl: 'https://images.unsplash.com/photo-1581579438747-1dc8d1e292c7?auto=format&fit=crop&w=1200&q=80'
+    imageUrl: 'https://img.magnific.com/free-photo/realistic-scene-with-health-worker-taking-care-elderly-patient_23-2151231405.jpg?uid=R249502451&ga=GA1.1.1897056062.1786168622&semt=ais_hybrid&w=740&q=80'
   },
   {
     id: 'telehealth-care',
@@ -252,7 +241,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     keyBenefits: ['Progress tracking & symptom scoring', 'Timely prescription renewals', 'Open line for patient questions', 'Sustained emotional wellness'],
     iconName: 'Clock',
     isPopular: false,
-    imageUrl: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80'
+    imageUrl: 'https://img.magnific.com/free-photo/medium-shot-smiley-nurse-clinic_23-2149741265.jpg?uid=R249502451&ga=GA1.1.1897056062.1786168622&semt=ais_hybrid&w=740&q=80'
   },
   {
     id: 'treatment-planning',
@@ -655,74 +644,7 @@ export const FAQ_DATA: FaqItem[] = [
   }
 ];
 
-export const BLOG_POSTS: BlogPost[] = [
-  {
-    id: 'blog-1',
-    title: 'Understanding Adult ADHD: Signs, Diagnoses, and Modern Care',
-    slug: 'understanding-adult-adhd',
-    category: 'ADHD & Focus',
-    readTime: '5 min read',
-    date: 'August 2, 2026',
-    author: 'Dr. Barbara Clement Njoku, DNP',
-    summary: 'Many adults live for decades with undiagnosed ADHD, attributing executive dysfunction to personal failure. Here is how modern psychiatric evaluation brings clarity and relief.',
-    content: [
-      'Adult ADHD often presents differently than childhood hyperactivity. Instead of physical restlessness, adults frequently experience internal mental restlessness, chronic procrastination, difficulty organizing tasks, and emotional dysregulation.',
-      'A formal psychiatric evaluation looks beyond surface symptoms to examine lifetime patterns, executive function struggles, and co-occurring anxiety or depression.',
-      'Treatment is highly personalized and may combine non-stimulant or stimulant medications, behavioral structure strategies, and sleep hygiene modifications.'
-    ],
-    keyTakeaways: [
-      'Adult ADHD is a neurodevelopmental trait, not a flaw in character or willpower.',
-      'Comprehensive evaluations rule out anxiety, depression, or thyroid dysfunction.',
-      'Tailored treatment significantly restores work productivity and relationship harmony.'
-    ],
-    tags: ['ADHD', 'Adult Psychiatry', 'Mental Health', 'Focus'],
-    imageUrl: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80'
-  },
-  {
-    id: 'blog-2',
-    title: 'Demystifying Psychiatric Medication: Safety, Stigma, and Science',
-    slug: 'demystifying-psychiatric-medication',
-    category: 'Medication Management',
-    readTime: '6 min read',
-    date: 'July 28, 2026',
-    author: 'Dr. Barbara Clement Njoku, DNP',
-    summary: 'Stigma often prevents people from seeking life-changing psychiatric prescriptions. Here is what you need to know about safety, dosing, and neurochemical balance.',
-    content: [
-      'Just as insulin supports pancreatic function in diabetes, psychiatric medications help regulate neurotransmitters like serotonin, dopamine, and norepinephrine in the brain.',
-      'Under the guidance of a board-certified PMHNP, medication management is a cautious, measured process. Start low, go slow, and evaluate side effects continuously.',
-      'Medication is rarely meant to replace personal coping tools; rather, it creates the emotional headroom required for therapy and healthy habits to work.'
-    ],
-    keyTakeaways: [
-      'Psychiatric medications are non-addictive when managed by a clinical specialist.',
-      'Regular follow-ups ensure optimal therapeutic response with minimal side effects.',
-      'Prescriptions can be adjusted or tapered safely under medical supervision.'
-    ],
-    tags: ['Medication', 'Psychiatry', 'Stigma Reduction', 'Wellness'],
-    imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1200&q=80'
-  },
-  {
-    id: 'blog-3',
-    title: '5 Daily Practices for Soothing Anxiety and Calming the Nervous System',
-    slug: '5-practices-soothing-anxiety',
-    category: 'Anxiety & Mindset',
-    readTime: '4 min read',
-    date: 'July 15, 2026',
-    author: 'Serenity Wellness Team',
-    summary: 'Simple, science-backed somatic micro-habits you can practice daily to regulate your autonomic nervous system and ease panic.',
-    content: [
-      'Anxiety manifests physically in the body long before racing thoughts reach awareness. Grounding techniques send immediate signals of safety to the brain.',
-      'Practice the 4-7-8 breathing method: inhale for 4 seconds, hold gently for 7, and exhale slowly for 8 seconds. Repeat 4 cycles.',
-      'Establish a digital sunset 60 minutes before bedtime to reduce blue light overstimulation and support natural melatonin synthesis.'
-    ],
-    keyTakeaways: [
-      'Breathing exercises alter blood gas chemistry to activate parasympathetic calm.',
-      'Consistent morning sunlight exposure sets your circadian mood rhythm.',
-      'Small daily practices prevent cumulative nervous system overwhelm.'
-    ],
-    tags: ['Anxiety Relief', 'Self Care', 'Mindfulness', 'Breathing'],
-    imageUrl: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80'
-  }
-];
+// BLOG_POSTS removed — not referenced by the site. Kept other clinic data intact.
 
 export const DAILY_WELLNESS_TIPS = [
   {

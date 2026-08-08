@@ -25,6 +25,7 @@ import {
   GraduationCap
 } from 'lucide-react';
 import { CLINIC_INFO, SERVICES_DATA } from '../data/clinicData';
+import { TREATMENT_PAGES } from '../data/treatmentPagesData';
 import { useLenis, scrollToElement } from './SmoothScroll';
 
 interface NavbarProps {
@@ -44,6 +45,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [treatmentDropdownOpen, setTreatmentDropdownOpen] = useState(false);
   const [mobileAboutSubmenuOpen, setMobileAboutSubmenuOpen] = useState(false);
   const [mobileServicesSubmenuOpen, setMobileServicesSubmenuOpen] = useState(false);
   const [mobileTreatmentSubmenuOpen, setMobileTreatmentSubmenuOpen] = useState(false);
@@ -52,6 +54,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   const router = useRouter();
   const pathname = usePathname();
   const lenis = useLenis();
+
+  // Core services helper used by the Services menu
+  const CORE_SERVICES_DATA = SERVICES_DATA;
 
   useEffect(() => {
     setMounted(true);
@@ -314,87 +319,58 @@ export const Navbar: React.FC<NavbarProps> = ({
               </div>
             </div>
 
-            {/* Our Treatment Link with 3-Column Categorized Mega Dropdown */}
-            <div 
+            {/* Our Treatment Mega Dropdown (Matching Services Design) */}
+            <div
               className="relative group"
               onMouseEnter={() => setTreatmentDropdownOpen(true)}
               onMouseLeave={() => setTreatmentDropdownOpen(false)}
             >
               <button
-                onClick={() => router.push('/services')}
+                onClick={() => router.push('/our-treatment')}
                 className={`px-3.5 py-2 rounded-xl text-sm font-semibold flex items-center gap-1.5 transition-all duration-200 ${
-                  pathname.includes('/psychiatry-') || pathname.includes('/therapy-') || pathname.includes('/individual-') || pathname.includes('/online-') || pathname.includes('/cognitive-') || pathname.includes('/group-') || pathname.includes('/family-') || pathname.includes('/dialectical-') || pathname.includes('/mindfulness-') || pathname.includes('/exposure-') || pathname.includes('/relaxation-') || pathname.includes('/substance-')
+                  pathname.includes('/our-treatment')
                     ? 'text-teal-800 bg-teal-50 shadow-xs'
                     : 'text-slate-700 hover:text-teal-700 hover:bg-slate-100/80'
                 }`}
               >
                 <span>Our Treatment</span>
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 group-hover:rotate-180 ${treatmentDropdownOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 group-hover:rotate-180 ${treatmentDropdownOpen ? 'rotate-180 text-teal-700' : ''}`} />
               </button>
 
-              {/* Mega Dropdown with 3 Columns */}
-              <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50 transition-all duration-200 ${
+              <div className={`absolute top-full left-0 pt-2 z-50 transition-all duration-200 ${
                 treatmentDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0'
               }`}>
-                <div className="w-[900px] bg-white rounded-2xl shadow-2xl border border-slate-100 p-5 grid grid-cols-3 gap-4">
-                  <div className="col-span-3 pb-3 mb-1 border-b border-slate-100 flex items-center justify-between">
+                <div className="w-[580px] bg-white rounded-2xl shadow-2xl border border-slate-100 p-5 grid grid-cols-2 gap-3">
+                  <div className="col-span-2 pb-2 mb-1 border-b border-slate-100 flex items-center justify-between">
                     <span className="text-xs font-bold uppercase tracking-wider text-teal-800 flex items-center gap-1.5">
-                      <Stethoscope className="w-4 h-4 text-teal-600" />
-                      Our Treatment Approach — Evidence-Based Care Pathways
+                      <Heart className="w-4 h-4 text-teal-600" />
+                      Evidence-Based Treatment Plans
                     </span>
-                    <span className="text-[11px] text-slate-500">Led by Dr. Barbara C. Njoku, DNP</span>
+                    <span className="text-[11px] text-slate-500">Comprehensive therapy & care options</span>
                   </div>
-                  {TREATMENT_CATEGORIES.map((cat) => (
-                    <div key={cat.title} className="space-y-2">
-                      <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-extrabold uppercase tracking-wider text-white bg-gradient-to-r ${cat.accent}`}>
-                        {cat.icon}
-                        <span>{cat.title}</span>
-                      </div>
-                      <div className="space-y-1.5">
-                        {cat.ids.map((id) => {
-                          const srv = mapIdTo(id);
-                          if (!srv) return null;
-                          return (
-                            <Link
-                              key={srv.id}
-                              href={`/services/${srv.id}`}
-                              onClick={() => setTreatmentDropdownOpen(false)}
-                              className="flex items-start gap-2 p-2 rounded-lg hover:bg-teal-50/70 transition-colors text-left group/item"
-                            >
-                              <div className="p-1.5 rounded-md bg-slate-100 text-slate-500 group-hover/item:bg-teal-100 group-hover/item:text-teal-700 transition-colors flex-shrink-0 mt-0.5">
-                                <CheckCircle2 className="w-3.5 h-3.5" />
-                              </div>
-                              <div>
-                                <div className="text-xs font-bold text-slate-800 group-hover/item:text-teal-900 leading-tight">
-                                  {srv.title}
-                                </div>
-                                <div className="text-[10px] text-slate-500 line-clamp-1 leading-snug mt-0.5">
-                                  {srv.shortDesc}
-                                </div>
-                              </div>
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  ))}
-                  <div className="col-span-3 mt-1 pt-3 border-t border-slate-100 flex items-center justify-between rounded-xl bg-gradient-to-r from-teal-50 via-emerald-50 to-sky-50 p-3">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-xl bg-white border border-teal-200 text-teal-700 shadow-sm">
-                        <HandHeart className="w-5 h-5" />
-                      </div>
-                      <div className="text-left">
-                        <div className="text-xs font-extrabold text-teal-900">Not sure which treatment fits?</div>
-                        <div className="text-[11px] text-teal-700/80 font-medium">Book a free 15-min phone consult — we'll guide you.</div>
-                      </div>
-                    </div>
-                    <button
-                      onClick={() => { setTreatmentDropdownOpen(false); openAppointmentModal(); }}
-                      className="px-4 py-2 rounded-lg text-[11px] font-extrabold text-white gradient-teal-blue shadow-md hover:shadow-lg transition-all"
+
+                  {TREATMENT_PAGES.map((item) => (
+                    <Link
+                      key={item.slug}
+                      href={`/our-treatment/${item.slug}`}
+                      onClick={() => setTreatmentDropdownOpen(false)}
+                      className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-teal-50/70 transition-colors text-left group/item"
                     >
-                      Book Free Consult
-                    </button>
-                  </div>
+                      <div className="p-2 rounded-lg bg-teal-100/60 text-teal-700 group-hover/item:bg-teal-600 group-hover/item:text-white transition-colors flex-shrink-0">
+                        <Sparkles className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-slate-800 group-hover/item:text-teal-900 leading-snug">
+                          {item.title}
+                        </div>
+                        {(item as any).shortDesc && (
+                          <div className="text-[11px] text-slate-500 line-clamp-1 mt-0.5">
+                            {(item as any).shortDesc}
+                          </div>
+                        )}
+                      </div>
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
@@ -566,7 +542,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </div>
                 </div>
 
-                {/* Mobile Our Treatment Submenu (Grouped) */}
+                {/* Mobile Our Treatment Submenu */}
                 <div className="w-full">
                   <button
                     onClick={() => setMobileTreatmentSubmenuOpen(!mobileTreatmentSubmenuOpen)}
@@ -577,41 +553,24 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </button>
 
                   <div className={`overflow-hidden transition-all duration-300 ease-out ${mobileTreatmentSubmenuOpen ? 'max-h-[8000px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                    <div className="ml-4 pl-3 border-l-2 border-emerald-300 my-2 space-y-3">
-                      {TREATMENT_CATEGORIES.map((cat) => (
-                        <div key={cat.title} className="space-y-1.5">
-                          <div className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-lg text-[10px] font-extrabold uppercase tracking-wider text-white bg-gradient-to-r ${cat.accent} ml-1`}>
-                            {cat.icon}
-                            <span>{cat.title}</span>
-                          </div>
-                          <div className="space-y-1">
-                            {cat.ids.map((id) => {
-                              const srv = mapIdTo(id);
-                              if (!srv) return null;
-                              return (
-                                <Link
-                                  key={srv.id}
-                                  href={`/services/${srv.id}`}
-                                  onClick={() => setMobileMenuOpen(false)}
-                                  className="block px-3 py-2.5 rounded-xl text-sm font-bold text-slate-900 hover:bg-teal-50 active:bg-teal-100 border border-transparent hover:border-teal-100"
-                                >
-                                  <div className="font-bold text-slate-900 leading-tight">{srv.title}</div>
-                                  <div className="font-normal text-[11px] text-slate-500 mt-0.5 line-clamp-2 leading-snug">{srv.shortDesc}</div>
-                                </Link>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      ))}
-                      <button
-                        onClick={() => {
-                          setMobileMenuOpen(false);
-                          setTimeout(() => openAppointmentModal(), 100);
-                        }}
-                        className="block w-full px-3 py-3 rounded-xl text-sm font-extrabold text-white gradient-teal-blue shadow-md hover:shadow-lg transition-all"
+                    <div className="ml-4 pl-3 border-l-2 border-teal-300 my-2 space-y-1.5">
+                      <Link
+                        href="/our-treatment"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block px-3 py-3 rounded-xl text-sm font-extrabold text-teal-900 bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-200 mb-2 hover:from-teal-100 hover:to-emerald-100"
                       >
-                        📞 Book Free 15-min Treatment Consult
-                      </button>
+                        ✨ View All Treatments
+                      </Link>
+                      {TREATMENT_PAGES.map((item) => (
+                        <Link
+                          key={item.slug}
+                          href={`/our-treatment/${item.slug}`}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="block px-3 py-3 rounded-xl text-sm font-bold text-slate-900 hover:bg-teal-50 active:bg-teal-100 border border-transparent hover:border-teal-100"
+                        >
+                          <div className="font-bold text-slate-900 leading-tight">{item.title}</div>
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </div>

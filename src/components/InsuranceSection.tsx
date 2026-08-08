@@ -72,11 +72,11 @@ export const InsuranceSection: React.FC = () => {
 
           {/* Right Column: 4-Column Responsive Grid with Larger Cards */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-5">
               {INSURANCES.map((item) => (
                 <div
                   key={item.id}
-                  className="group relative bg-white/95 backdrop-blur-md p-4  sm:p-3 rounded-2xl border border-teal-100/90 shadow-xs hover:border-teal-400 hover:shadow-xl hover:shadow-teal-900/5 hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center justify-center h-28 sm:h-32 w-full text-center"
+                  className="group relative bg-white/95 backdrop-blur-md p-4 sm:p-2 rounded-2xl border border-teal-100/90 shadow-xs hover:border-teal-400 hover:shadow-xl hover:shadow-teal-900/5 hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center justify-center h-28 sm:h-32 w-full text-center"
                 >
                   {/* Optional Provider Sub-Badge */}
                   {item.badge && (
