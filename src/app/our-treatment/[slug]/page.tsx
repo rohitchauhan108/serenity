@@ -14,7 +14,9 @@ import {
   CheckCircle2,
   ChevronRight,
   Clock,
+  HeartHandshake,
   MessageCircle,
+  Sparkles,
   ShieldCheck
 } from 'lucide-react';
 
@@ -27,11 +29,6 @@ export default function TreatmentDetailPage() {
   if (!treatment) {
     notFound();
   }
-
-  const relatedTreatments = treatment.relatedSlugs
-    .map((relatedSlug) => TREATMENT_PAGE_MAP[relatedSlug])
-    .filter(Boolean)
-    .slice(0, 3);
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 font-sans selection:bg-teal-500/20 selection:text-teal-900">
@@ -82,7 +79,7 @@ export default function TreatmentDetailPage() {
               <div className="lg:col-span-5">
                 <div className="relative rounded-3xl overflow-hidden border border-teal-500/30 shadow-2xl aspect-4/3">
                   <img
-                    src={treatment.heroImage}
+                    src={treatment.image}
                     alt={treatment.title}
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
