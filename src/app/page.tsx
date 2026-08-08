@@ -64,21 +64,14 @@ export default function HomePage() {
           scrollToSection={scrollToSection}
           openSelfCheckModal={() => setIsSelfCheckOpen(true)}
         />
-        <OurTreatment />
+
         {/* About Serenity */}
         <AboutSerenity />
 
         <InsuranceSection />
 
-        {/* Meet Doctor: Dr. Barbara Clement Njoku */}
-        <MeetDoctor openAppointmentModal={() => openAppointmentModal()} />
-
-        {/* Our Services
-        <ServicesSection
-          openAppointmentModal={openAppointmentModal}
-          selectedServiceId={selectedServiceId}
-          setSelectedServiceId={setSelectedServiceId}
-        /> */}
+        {/* our treatment */}
+        <OurTreatment />
 
         {/* Conditions We Treat */}
         <ConditionsSection openAppointmentModal={openAppointmentModal} />
