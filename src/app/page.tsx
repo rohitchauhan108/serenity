@@ -76,13 +76,6 @@ export default function HomePage() {
         {/* Conditions We Treat */}
         <ConditionsSection openAppointmentModal={openAppointmentModal} />
 
-
-
-     
-
-        {/* Treatment Process */}
-        <TreatmentProcess />
-
         {/* Interactive Breathing & Wellness Widget */}
         <BreathingWidget />
 

@@ -46,6 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileAboutSubmenuOpen, setMobileAboutSubmenuOpen] = useState(false);
   const [mobileServicesSubmenuOpen, setMobileServicesSubmenuOpen] = useState(false);
+  const [mobileTreatmentSubmenuOpen, setMobileTreatmentSubmenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   const router = useRouter();
@@ -70,8 +71,10 @@ export const Navbar: React.FC<NavbarProps> = ({
     setMobileMenuOpen(false);
     setMobileAboutSubmenuOpen(false);
     setMobileServicesSubmenuOpen(false);
+    setMobileTreatmentSubmenuOpen(false);
     setAboutDropdownOpen(false);
     setServicesDropdownOpen(false);
+    setTreatmentDropdownOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -89,6 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     setMobileMenuOpen(false);
     setServicesDropdownOpen(false);
     setAboutDropdownOpen(false);
+    setTreatmentDropdownOpen(false);
 
     if (path) {
       router.push(path);
@@ -107,11 +111,10 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header
-      className="sticky top-0 z-[100] transition-all duration-300 font-sans"
-      style={{ willChange: 'transform' }}
-    >
-      {/* Top Crisis & Quick Contact Bar */}
+    // Header is relative so the crisis bar scrolls away with the page
+    <header className="relative font-sans">
+      
+      {/* Top Crisis & Quick Contact Bar (Scrolls away with page) */}
       <div className="bg-gradient-to-r from-teal-900 via-teal-800 to-slate-900 text-white text-xs sm:text-sm py-2 px-4 shadow-sm">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
           <div className="flex items-center gap-2 text-teal-100 text-center md:text-left">
@@ -137,9 +140,9 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* Main Glass Navbar */}
+      {/* Main Glass Navbar (Sticks to top-0 on scroll) */}
       <nav
-        className={`sticky top-0 transition-all duration-300 ${
+        className={`sticky top-0 z-[100] transition-all duration-300 ${
           isScrolled 
             ? 'bg-white/97 backdrop-blur-xl shadow-xl border-b border-slate-200/80 py-3 sm:py-3.5' 
             : 'bg-white/95 backdrop-blur-md border-b border-slate-100 py-4 sm:py-5'
@@ -195,7 +198,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 group-hover:rotate-180 ${aboutDropdownOpen ? 'rotate-180 text-teal-700' : ''}`} />
               </button>
 
-              {/* Submenu Dropdown Container with hover bridge */}
+              {/* Submenu Dropdown Container */}
               <div className={`absolute top-full left-0 pt-2 z-50 transition-all duration-200 ${
                 aboutDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0'
               }`}>
@@ -275,7 +278,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 group-hover:rotate-180 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
 
-              {/* Mega Dropdown with Hover Bridge */}
+              {/* Mega Dropdown Container */}
               <div className={`absolute top-full left-0 pt-2 z-50 transition-all duration-200 ${
                 servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0'
               }`}>
@@ -283,11 +286,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <div className="col-span-2 pb-2 mb-1 border-b border-slate-100 flex items-center justify-between">
                     <span className="text-xs font-bold uppercase tracking-wider text-teal-800 flex items-center gap-1.5">
                       <Brain className="w-4 h-4 text-teal-600" />
-                      Comprehensive Psychiatric Services
+                      Core Services & Programs
                     </span>
-                    <span className="text-[11px] text-slate-500">Board-Certified Care in MD</span>
+                    <span className="text-[11px] text-slate-500">Visit Our Treatment for therapy modalities</span>
                   </div>
-                  {SERVICES_DATA.slice(0, 8).map((srv) => (
+                  {CORE_SERVICES_DATA.slice(0, 10).map((srv) => (
                     <Link
                       key={srv.id}
                       href={`/services/${srv.id}`}
@@ -307,6 +310,91 @@ export const Navbar: React.FC<NavbarProps> = ({
                       </div>
                     </Link>
                   ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Our Treatment Link with 3-Column Categorized Mega Dropdown */}
+            <div 
+              className="relative group"
+              onMouseEnter={() => setTreatmentDropdownOpen(true)}
+              onMouseLeave={() => setTreatmentDropdownOpen(false)}
+            >
+              <button
+                onClick={() => router.push('/services')}
+                className={`px-3.5 py-2 rounded-xl text-sm font-semibold flex items-center gap-1.5 transition-all duration-200 ${
+                  pathname.includes('/psychiatry-') || pathname.includes('/therapy-') || pathname.includes('/individual-') || pathname.includes('/online-') || pathname.includes('/cognitive-') || pathname.includes('/group-') || pathname.includes('/family-') || pathname.includes('/dialectical-') || pathname.includes('/mindfulness-') || pathname.includes('/exposure-') || pathname.includes('/relaxation-') || pathname.includes('/substance-')
+                    ? 'text-teal-800 bg-teal-50 shadow-xs'
+                    : 'text-slate-700 hover:text-teal-700 hover:bg-slate-100/80'
+                }`}
+              >
+                <span>Our Treatment</span>
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 group-hover:rotate-180 ${treatmentDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {/* Mega Dropdown with 3 Columns */}
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50 transition-all duration-200 ${
+                treatmentDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0'
+              }`}>
+                <div className="w-[900px] bg-white rounded-2xl shadow-2xl border border-slate-100 p-5 grid grid-cols-3 gap-4">
+                  <div className="col-span-3 pb-3 mb-1 border-b border-slate-100 flex items-center justify-between">
+                    <span className="text-xs font-bold uppercase tracking-wider text-teal-800 flex items-center gap-1.5">
+                      <Stethoscope className="w-4 h-4 text-teal-600" />
+                      Our Treatment Approach — Evidence-Based Care Pathways
+                    </span>
+                    <span className="text-[11px] text-slate-500">Led by Dr. Barbara C. Njoku, DNP</span>
+                  </div>
+                  {TREATMENT_CATEGORIES.map((cat) => (
+                    <div key={cat.title} className="space-y-2">
+                      <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-extrabold uppercase tracking-wider text-white bg-gradient-to-r ${cat.accent}`}>
+                        {cat.icon}
+                        <span>{cat.title}</span>
+                      </div>
+                      <div className="space-y-1.5">
+                        {cat.ids.map((id) => {
+                          const srv = mapIdTo(id);
+                          if (!srv) return null;
+                          return (
+                            <Link
+                              key={srv.id}
+                              href={`/services/${srv.id}`}
+                              onClick={() => setTreatmentDropdownOpen(false)}
+                              className="flex items-start gap-2 p-2 rounded-lg hover:bg-teal-50/70 transition-colors text-left group/item"
+                            >
+                              <div className="p-1.5 rounded-md bg-slate-100 text-slate-500 group-hover/item:bg-teal-100 group-hover/item:text-teal-700 transition-colors flex-shrink-0 mt-0.5">
+                                <CheckCircle2 className="w-3.5 h-3.5" />
+                              </div>
+                              <div>
+                                <div className="text-xs font-bold text-slate-800 group-hover/item:text-teal-900 leading-tight">
+                                  {srv.title}
+                                </div>
+                                <div className="text-[10px] text-slate-500 line-clamp-1 leading-snug mt-0.5">
+                                  {srv.shortDesc}
+                                </div>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                  <div className="col-span-3 mt-1 pt-3 border-t border-slate-100 flex items-center justify-between rounded-xl bg-gradient-to-r from-teal-50 via-emerald-50 to-sky-50 p-3">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 rounded-xl bg-white border border-teal-200 text-teal-700 shadow-sm">
+                        <HandHeart className="w-5 h-5" />
+                      </div>
+                      <div className="text-left">
+                        <div className="text-xs font-extrabold text-teal-900">Not sure which treatment fits?</div>
+                        <div className="text-[11px] text-teal-700/80 font-medium">Book a free 15-min phone consult — we'll guide you.</div>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => { setTreatmentDropdownOpen(false); openAppointmentModal(); }}
+                      className="px-4 py-2 rounded-lg text-[11px] font-extrabold text-white gradient-teal-blue shadow-md hover:shadow-lg transition-all"
+                    >
+                      Book Free Consult
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -378,9 +466,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => setMobileMenuOpen(false)}
           />
         )}
+
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="md:hidden fixed inset-x-0 top-0 z-[9999] bg-white shadow-2xl border-b border-slate-200 animate-in slide-in-from-top duration-300" style={{ marginTop: '0px' }}>
+          <div className="md:hidden fixed inset-x-0 top-0 z-[9999] bg-white shadow-2xl border-b border-slate-200 animate-in slide-in-from-top duration-300">
             <div className="px-4 pt-[max(env(safe-area-inset-top),12px)] pb-6 max-h-[100dvh] overflow-y-auto overscroll-contain">
               <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
                 <div className="flex items-center gap-2">
@@ -403,7 +492,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </button>
               </div>
               <div className="flex flex-col gap-1">
-                
                 <Link
                   href="/"
                   onClick={() => setMobileMenuOpen(false)}
@@ -412,7 +500,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   Home
                 </Link>
 
-                {/* Mobile About Submenu Expandable */}
+                {/* Mobile About Submenu */}
                 <div className="w-full">
                   <button
                     onClick={() => setMobileAboutSubmenuOpen(!mobileAboutSubmenuOpen)}
@@ -444,7 +532,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </div>
                 </div>
 
-                {/* Mobile Services Submenu Expandable */}
+                {/* Mobile Services Submenu */}
                 <div className="w-full">
                   <button
                     onClick={() => setMobileServicesSubmenuOpen(!mobileServicesSubmenuOpen)}
@@ -463,7 +551,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       >
                         ✨ View All Services
                       </Link>
-                      {SERVICES_DATA.map((srv) => (
+                      {CORE_SERVICES_DATA.map((srv) => (
                         <Link
                           key={srv.id}
                           href={`/services/${srv.id}`}
@@ -474,6 +562,56 @@ export const Navbar: React.FC<NavbarProps> = ({
                           <div className="font-normal text-xs text-slate-500 mt-1 line-clamp-2 leading-snug">{srv.shortDesc}</div>
                         </Link>
                       ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mobile Our Treatment Submenu (Grouped) */}
+                <div className="w-full">
+                  <button
+                    onClick={() => setMobileTreatmentSubmenuOpen(!mobileTreatmentSubmenuOpen)}
+                    className="w-full px-4 py-3 rounded-xl text-left font-semibold text-sm text-slate-800 hover:bg-slate-50 active:bg-slate-100 flex items-center justify-between"
+                  >
+                    <span>Our Treatment</span>
+                    <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-300 ${mobileTreatmentSubmenuOpen ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  <div className={`overflow-hidden transition-all duration-300 ease-out ${mobileTreatmentSubmenuOpen ? 'max-h-[8000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="ml-4 pl-3 border-l-2 border-emerald-300 my-2 space-y-3">
+                      {TREATMENT_CATEGORIES.map((cat) => (
+                        <div key={cat.title} className="space-y-1.5">
+                          <div className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-lg text-[10px] font-extrabold uppercase tracking-wider text-white bg-gradient-to-r ${cat.accent} ml-1`}>
+                            {cat.icon}
+                            <span>{cat.title}</span>
+                          </div>
+                          <div className="space-y-1">
+                            {cat.ids.map((id) => {
+                              const srv = mapIdTo(id);
+                              if (!srv) return null;
+                              return (
+                                <Link
+                                  key={srv.id}
+                                  href={`/services/${srv.id}`}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="block px-3 py-2.5 rounded-xl text-sm font-bold text-slate-900 hover:bg-teal-50 active:bg-teal-100 border border-transparent hover:border-teal-100"
+                                >
+                                  <div className="font-bold text-slate-900 leading-tight">{srv.title}</div>
+                                  <div className="font-normal text-[11px] text-slate-500 mt-0.5 line-clamp-2 leading-snug">{srv.shortDesc}</div>
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      ))}
+                      <button
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                          setTimeout(() => openAppointmentModal(), 100);
+                        }}
+                        className="block w-full px-3 py-3 rounded-xl text-sm font-extrabold text-white gradient-teal-blue shadow-md hover:shadow-lg transition-all"
+                      >
+                        📞 Book Free 15-min Treatment Consult
+                      </button>
                     </div>
                   </div>
                 </div>

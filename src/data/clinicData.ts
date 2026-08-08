@@ -155,7 +155,17 @@ export const SERVICES_DATA: ServiceItem[] = [
     isPopular: false,
     imageUrl: 'https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?auto=format&fit=crop&w=1200&q=80'
   },
-
+  {
+    id: 'adhd-treatment',
+    title: 'ADHD Assessment & Care (Adult & Child)',
+    category: 'evaluation',
+    shortDesc: 'Comprehensive neurodevelopmental screening, focus enhancement strategies, and non-stimulant or stimulant medication management.',
+    fullDesc: 'Attention-Deficit/Hyperactivity Disorder affects executive function at all ages. We offer structured diagnostic evaluations and multi-modal treatment plans for work, school, and home success.',
+    keyBenefits: ['Objective diagnostic screening', 'Executive function coaching concepts', 'Tailored medication management', 'Work & academic accommodation guidance'],
+    iconName: 'Zap',
+    isPopular: true,
+    imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80'
+  },
   {
     id: 'ptsd-trauma',
     title: 'PTSD & Trauma Therapy',
@@ -220,7 +230,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     keyBenefits: ['Polypharmacy interaction checks', 'Caregiver coordination', 'Memory & mood stabilization', 'Comfortable telehealth or clinic visits'],
     iconName: 'HeartHandshake',
     isPopular: false,
-    imageUrl: 'https://img.magnific.com/premium-photo/black-senior-female-psychologist-female-accessories-accessory_53876-456451.jpg?uid=R216602706&ga=GA1.1.228512483.1779864961&semt=ais_hybrid&w=740&q=80'
+    imageUrl: 'https://images.unsplash.com/photo-1581579438747-1dc8d1e292c7?auto=format&fit=crop&w=1200&q=80'
   },
   {
     id: 'telehealth-care',
@@ -242,7 +252,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     keyBenefits: ['Progress tracking & symptom scoring', 'Timely prescription renewals', 'Open line for patient questions', 'Sustained emotional wellness'],
     iconName: 'Clock',
     isPopular: false,
-    imageUrl: 'https://img.magnific.com/premium-photo/tablet-checkup-nurse-with-senior-man-sofa-discussion-diagnosis-retirement-home-digital-technology-stress-caregiver-with-elderly-male-patient-living-room-medical-plan_590464-559857.jpg?uid=R216602706&ga=GA1.1.228512483.1779864961&semt=ais_hybrid&w=740&q=80'
+    imageUrl: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80'
   },
   {
     id: 'treatment-planning',
