@@ -1,30 +1,9 @@
 "use client";
 
-<<<<<<< HEAD
-import React, { useState } from 'react';
-import { Navbar } from '../components/Navbar';
-import { Hero } from '../components/Hero';
-import { AboutSerenity } from '../components/AboutSerenity';
-import { MeetDoctor } from '../components/MeetDoctor';
-// import { ConditionsSection } from '../components/ConditionsSection';
-// import { TreatmentProcess } from '../components/TreatmentProcess';
-import { BreathingWidget } from '../components/BreathingWidget';
-import { TestimonialsSection } from '../components/TestimonialsSection';
-import { FaqSection } from '../components/FaqSection';
-import { InformativeCta } from '../components/InformativeCta';
-import { Footer } from '../components/Footer';
-import { AppointmentModal } from '../components/AppointmentModal';
-import { LegalModal, SelfCheckModal } from '../components/AdditionalPages';
-import { useLenis, scrollToElement } from '../components/SmoothScroll';
-import InsuranceSection from '@/components/InsuranceSection';
-=======
 import React, { useState } from "react";
 import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/Hero";
 import { AboutSerenity } from "../components/AboutSerenity";
-import { MeetDoctor } from "../components/MeetDoctor";
-import { ConditionsSection } from "../components/ConditionsSection";
-import { TreatmentProcess } from "../components/TreatmentProcess";
 import { BreathingWidget } from "../components/BreathingWidget";
 import { TestimonialsSection } from "../components/TestimonialsSection";
 import { FaqSection } from "../components/FaqSection";
@@ -35,7 +14,6 @@ import { LegalModal, SelfCheckModal } from "../components/AdditionalPages";
 import { useLenis, scrollToElement } from "../components/SmoothScroll";
 import InsuranceSection from "@/components/InsuranceSection";
 import OurTreatment from "@/components/OurTreatment";
->>>>>>> 13b848bd5f8192dc859204a8a1ea1284337a191e
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState<string>("home");
