@@ -127,7 +127,7 @@ export default function ServicesPage() {
               <div className="lg:col-span-4 hidden lg:block">
                 <div className="relative rounded-3xl overflow-hidden border border-teal-500/30 shadow-2xl aspect-[4/3]">
                   <img
-                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800"
+                    src="https://img.magnific.com/premium-photo/support-man-talking-black-woman-group-therapy-understanding-sharing-feeling-counselling-session-mental-health-addiction-depression-people-with-advice-help-from-grief-therapist_590464-155813.jpg?uid=R212285470&ga=GA1.1.1383789883.1786786872&semt=ais_hybrid&w=740&q=80"
                     alt="Psychiatric Consultation Session"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
