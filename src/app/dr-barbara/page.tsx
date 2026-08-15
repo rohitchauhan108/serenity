@@ -209,7 +209,7 @@ export default function DrBarbaraPage() {
                 Academic Degrees & Board Certifications
               </h2>
               <p className="text-slate-600 text-base">
-                Rigorous doctoral-level medical education combined with specialized psychiatric credentials.
+                Rigorous doctoral-level nursing education combined with specialized psychiatric credentials.
               </p>
             </div>
 
@@ -320,7 +320,7 @@ export default function DrBarbaraPage() {
               <div className="flex flex-wrap justify-center gap-2 pt-4">
                 {[
                   { id: 'all', label: 'All Conditions' },
-                  { id: 'adolescents', label: 'Adolescents (12)' },
+                  { id: 'adolescents', label: 'Adolescents (14)' },
                   { id: 'adults', label: 'Adult Psychiatry' },
                   { id: 'seniors', label: 'Seniors & Geriatric' }
                 ].map((tab) => (

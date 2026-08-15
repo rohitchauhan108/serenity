@@ -157,42 +157,57 @@ export const ConditionsSection: React.FC<ConditionsSectionProps> = ({ openAppoin
               <div
                 key={cond.id}
                 onClick={() => setSelectedCondition(cond)}
-                className={`p-6 rounded-3xl bg-white border border-slate-200/90 hover:border-teal-400 shadow-xs hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden cursor-pointer`}
+                className={`rounded-3xl bg-white border border-slate-200/90 hover:border-teal-400 shadow-xs hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden cursor-pointer`}
               >
                 {/* Top Hover Gradient Line */}
-                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-teal-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-teal-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
 
-                <div>
-                  {/* Category Pill & Icon */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-teal-800 bg-teal-50 px-2.5 py-0.5 rounded-full border border-teal-200/60">
+                {/* Condition Card Image Banner */}
+                <div className={`relative overflow-hidden rounded-t-3xl bg-gradient-to-br ${cond.color} border-b border-slate-100/80`}>
+                  <div className="relative h-32 overflow-hidden">
+                    <img
+                      src={cond.imageUrl}
+                      alt={cond.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 mix-blend-overlay opacity-80"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent" />
+                  </div>
+                  <div className="absolute top-3 left-3 z-10">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-teal-900 bg-white/90 backdrop-blur-sm px-2.5 py-0.5 rounded-full border border-teal-200/60 shadow-sm">
                       {cond.category}
                     </span>
-                    <div className="w-9 h-9 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center group-hover:bg-teal-700 group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                  </div>
+                  <div className="absolute -bottom-5 right-4 z-10">
+                    <div className="w-10 h-10 rounded-xl bg-white text-teal-700 flex items-center justify-center group-hover:bg-teal-700 group-hover:text-white transition-colors duration-300 shadow-lg border border-slate-100">
                       <Brain className="w-4 h-4" />
                     </div>
                   </div>
-
-                  {/* Title */}
-                  <h3 className="font-heading font-bold text-base text-slate-900 group-hover:text-teal-900 mb-2 transition-colors">
-                    {cond.name}
-                  </h3>
-
-                  {/* Description snippet */}
-                  <p className="text-xs text-slate-600 leading-relaxed line-clamp-3 mb-4">
-                    {cond.description}
-                  </p>
                 </div>
 
-                {/* Card Footer CTA */}
-                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-teal-700 group-hover:text-teal-900">
-                  <span className="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    <span>View Care Plan</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
-                  <span className="text-[10px] text-slate-400 font-normal">
-                    {cond.symptoms.length} Symptoms
-                  </span>
+                <div className="p-6 pt-8">
+                  <div>
+                    {/* Title */}
+                    <h3 className="font-heading font-bold text-base text-slate-900 group-hover:text-teal-900 mb-2 transition-colors">
+                      {cond.name}
+                    </h3>
+
+                    {/* Description snippet */}
+                    <p className="text-xs text-slate-600 leading-relaxed line-clamp-3 mb-4">
+                      {cond.description}
+                    </p>
+                  </div>
+
+                  {/* Card Footer CTA */}
+                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-teal-700 group-hover:text-teal-900">
+                    <span className="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                      <span>View Care Plan</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </span>
+                    <span className="text-[10px] text-slate-400 font-normal">
+                      {cond.symptoms.length} Symptoms
+                    </span>
+                  </div>
                 </div>
 
               </div>
@@ -205,81 +220,92 @@ export const ConditionsSection: React.FC<ConditionsSectionProps> = ({ openAppoin
       {/* Condition Details Modal */}
       {selectedCondition && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-slate-100 relative max-h-[90vh] overflow-y-auto">
-            
-            <button
-              onClick={() => setSelectedCondition(null)}
-              className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:bg-slate-100 hover:text-slate-700 cursor-pointer"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-3 bg-teal-100 text-teal-800 rounded-2xl">
-                <Brain className="w-6 h-6 text-teal-700" />
-              </div>
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
-                  {selectedCondition.category}
-                </span>
-                <h3 className="font-heading font-extrabold text-2xl text-slate-900">
-                  {selectedCondition.name}
-                </h3>
-              </div>
-            </div>
-
-            <p className="text-slate-600 text-sm leading-relaxed mb-5">
-              {selectedCondition.description}
-            </p>
-
-            <div className="space-y-4 mb-6">
-              <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200/80">
-                <h4 className="font-bold text-xs uppercase tracking-wider text-slate-700 mb-2 flex items-center gap-1.5">
-                  <Activity className="w-3.5 h-3.5 text-slate-500" />
-                  <span>Common Symptoms Recognized:</span>
-                </h4>
-                <div className="flex flex-wrap gap-1.5">
-                  {selectedCondition.symptoms.map((s, idx) => (
-                    <span key={idx} className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-xs font-medium text-slate-700 shadow-2xs">
-                      • {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-teal-50/70 p-4 rounded-2xl border border-teal-200/80">
-                <h4 className="font-bold text-xs uppercase tracking-wider text-teal-800 mb-2 flex items-center gap-1.5">
-                  <Shield className="w-3.5 h-3.5 text-teal-600" />
-                  <span>Our Treatment & Care Approach:</span>
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {selectedCondition.treatments.map((t, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs text-teal-900 font-medium bg-white/80 p-2 rounded-xl border border-teal-100">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 flex-shrink-0" />
-                      <span>{t}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-100">
+          <div className="bg-white rounded-3xl max-w-xl w-full shadow-2xl border border-slate-100 relative max-h-[90vh] overflow-y-auto">
+            {/* Modal Image Banner */}
+            <div className={`relative h-40 overflow-hidden rounded-t-3xl bg-gradient-to-br ${selectedCondition.color}`}>
+              <img
+                src={selectedCondition.imageUrl}
+                alt={selectedCondition.name}
+                className="w-full h-full object-cover mix-blend-overlay opacity-85"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent" />
               <button
                 onClick={() => setSelectedCondition(null)}
-                className="px-5 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-bold text-xs hover:bg-slate-50 transition-colors cursor-pointer"
+                className="absolute top-4 right-4 p-2 rounded-full bg-white/90 backdrop-blur-sm text-slate-600 hover:bg-white hover:text-slate-900 cursor-pointer shadow-lg border border-white/50 z-10"
               >
-                Close
+                <X className="w-5 h-5" />
               </button>
-              <button
-                onClick={() => {
-                  setSelectedCondition(null);
-                  router.push('/contact');
-                }}
-                className="px-6 py-2.5 rounded-xl text-white font-bold text-xs gradient-teal-blue shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center gap-2"
-              >
-                <Calendar className="w-4 h-4" />
-                <span>Book Evaluation for {selectedCondition.name}</span>
-              </button>
+            </div>
+
+            <div className="p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-4 -mt-16 relative z-10">
+                <div className="p-3 bg-teal-100 text-teal-800 rounded-2xl shadow-lg border border-white">
+                  <Brain className="w-6 h-6 text-teal-700" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
+                    {selectedCondition.category}
+                  </span>
+                  <h3 className="font-heading font-extrabold text-2xl text-slate-900">
+                    {selectedCondition.name}
+                  </h3>
+                </div>
+              </div>
+
+              <p className="text-slate-600 text-sm leading-relaxed mb-5">
+                {selectedCondition.description}
+              </p>
+
+              <div className="space-y-4 mb-6">
+                <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200/80">
+                  <h4 className="font-bold text-xs uppercase tracking-wider text-slate-700 mb-2 flex items-center gap-1.5">
+                    <Activity className="w-3.5 h-3.5 text-slate-500" />
+                    <span>Common Symptoms Recognized:</span>
+                  </h4>
+                  <div className="flex flex-wrap gap-1.5">
+                    {selectedCondition.symptoms.map((s, idx) => (
+                      <span key={idx} className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-xs font-medium text-slate-700 shadow-2xs">
+                        • {s}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-teal-50/70 p-4 rounded-2xl border border-teal-200/80">
+                  <h4 className="font-bold text-xs uppercase tracking-wider text-teal-800 mb-2 flex items-center gap-1.5">
+                    <Shield className="w-3.5 h-3.5 text-teal-600" />
+                    <span>Our Treatment & Care Approach:</span>
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {selectedCondition.treatments.map((t, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-xs text-teal-900 font-medium bg-white/80 p-2 rounded-xl border border-teal-100">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 flex-shrink-0" />
+                        <span>{t}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-100">
+                <button
+                  onClick={() => setSelectedCondition(null)}
+                  className="px-5 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-bold text-xs hover:bg-slate-50 transition-colors cursor-pointer"
+                >
+                  Close
+                </button>
+                <button
+                  onClick={() => {
+                    setSelectedCondition(null);
+                    router.push('/contact');
+                  }}
+                  className="px-6 py-2.5 rounded-xl text-white font-bold text-xs gradient-teal-blue shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center gap-2"
+                >
+                  <Calendar className="w-4 h-4" />
+                  <span>Book Evaluation for {selectedCondition.name}</span>
+                </button>
+              </div>
             </div>
 
           </div>

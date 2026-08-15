@@ -292,7 +292,7 @@ export default function ConditionsPage() {
               <img
                 src={selectedCondition.imageUrl}
                 alt={selectedCondition.name}
-                className="w-full h-full object-cover mix-blend-overlay opacity-90"
+                className="w-full h-full object-cover mix-blend-overlay opacity-85"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent" />

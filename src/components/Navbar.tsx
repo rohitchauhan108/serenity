@@ -149,8 +149,8 @@ export const Navbar: React.FC<NavbarProps> = ({
       <nav
         className={`sticky top-0 z-[100] transition-all duration-300 ${
           isScrolled 
-            ? 'bg-white/97 backdrop-blur-xl shadow-xl border-b border-slate-200/80 py-3 sm:py-3.5' 
-            : 'bg-white/95 backdrop-blur-md border-b border-slate-100 py-4 sm:py-5'
+            ? 'bg-white/97 backdrop-blur-xl shadow-xl border-b border-slate-200/80 py-2 sm:py-2.5' 
+            : 'bg-white/95 backdrop-blur-md border-b border-slate-100 py-3 sm:py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -160,11 +160,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             href="/"
             className="flex items-center gap-3 group text-left focus:outline-none"
           >
-            <div className="relative h-20 sm:h-28 md:h-32 lg:h-36 overflow-hidden group-hover:scale-105 transition-transform duration-300">
+            <div className="relative h-36 sm:h-48 md:h-52 overflow-hidden group-hover:scale-105 transition-transform duration-300">
               <img 
                 src={CLINIC_INFO.logoUrl} 
                 alt="Serenity Behavioral & Wellness Services Logo" 
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain drop-shadow-md"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -449,11 +449,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div className="px-4 pt-[max(env(safe-area-inset-top),12px)] pb-6 max-h-[100dvh] overflow-y-auto overscroll-contain">
               <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
                 <div className="flex items-center gap-2">
-                  <div className="h-10 overflow-hidden">
+                  <div className="h-14 overflow-hidden">
                     <img 
                       src={CLINIC_INFO.logoUrl} 
                       alt="Serenity Logo" 
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-contain drop-shadow-sm"
                       referrerPolicy="no-referrer"
                     />
                   </div>

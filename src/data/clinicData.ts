@@ -10,10 +10,10 @@ import {
 export const CLINIC_INFO = {
   name: 'Serenity Behavioral & Wellness Services LLC',
   shortName: 'Serenity Behavioral',
-  location: 'Maryland, USA',
-  address: '8830 Stanford Blvd, Suite 210, Columbia, MD 21045',
-  phone: '301 793 0825',
-  altPhone: '(443) 555-7821',
+  location: 'Maryland, USA (Telehealth)',
+  address: 'Statewide Telehealth Practice — Maryland',
+  phone: '240 330 2591',
+  altPhone: '(240) 330-2591',
   email: 'info@serenitybws.com',
   workingHours: [
     { days: 'Monday – Friday', hours: '8:00 AM – 6:00 PM' },
@@ -55,18 +55,18 @@ export const DOCTOR_DATA: DoctorInfo = {
   education: [
     {
       degree: 'Doctor of Nursing Practice (DNP) - Psychiatric Mental Health Specialty',
-      institution: 'University of Maryland School of Nursing',
-      year: '2019'
+      year: '2019',
+      institution: ''
     },
     {
       degree: 'Post-Master’s PMHNP Certificate',
-      institution: 'Johns Hopkins University School of Nursing',
-      year: '2016'
+      year: '2016',
+      institution: ''
     },
     {
       degree: 'Bachelor of Science in Nursing (BSN)',
-      institution: 'Towson University',
-      year: '2012'
+      year: '2012',
+      institution: ''
     }
   ],
   timeline: [
@@ -108,7 +108,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     keyBenefits: ['60-90 minute thorough consultation', 'Evidence-based diagnostic criteria (DSM-5-TR)', 'Rule out underlying physical conditions', 'Collaborative formulation of next steps'],
     iconName: 'ClipboardCheck',
     isPopular: true,
-    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80'
+    imageUrl: 'https://img.magnific.com/free-photo/african-american-patients-talking-about-healthcare-diagnosis-waiting-room-lobby-health-center-group-men-sitting-area-hospital-reception-before-attending-checkup-examination_482257-49653.jpg?uid=R249502451&ga=GA1.1.1459041070.1786784255&semt=ais_hybrid&w=740&q=80'
   },
   {
     id: 'medication-management',
@@ -276,7 +276,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Racing heartbeat', 'Restlessness', 'Muscle tension', 'Overthinking', 'Sleep disturbances'],
     treatments: ['Psychiatric Evaluation', 'Cognitive Restructuring', 'Anxiolytic / SSRI Medication', 'Breathwork'],
     color: 'from-teal-500/10 to-emerald-500/20 border-teal-200',
-    imageUrl: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://images.pexels.com/photos/3822710/pexels-photo-3822710.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
     id: 'depression',
@@ -286,7 +286,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Persistent low mood', 'Fatigue / low energy', 'Feelings of worthlessness', 'Changes in appetite', 'Concentration loss'],
     treatments: ['Medication Management', 'Behavioral Activation', 'Lifestyle Guidance', 'Supportive Therapy'],
     color: 'from-blue-500/10 to-cyan-500/20 border-blue-200',
-    imageUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://images.pexels.com/photos/5120164/pexels-photo-5120164.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
     id: 'stress',
@@ -296,7 +296,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Brain fog', 'Irritability', 'Insomnia', 'Frequent headaches', 'Emotional detachment'],
     treatments: ['Stress Mitigation Plans', 'Somatic Relaxation', 'Sleep Hygiene', 'Work-Life Rebalancing'],
     color: 'from-amber-500/10 to-orange-500/20 border-amber-200',
-    imageUrl: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://images.pexels.com/photos/6050430/pexels-photo-6050430.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
     id: 'ptsd',
@@ -306,7 +306,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Flashbacks', 'Nightmares', 'Hypervigilance', 'Emotional numbness', 'Avoidance of triggers'],
     treatments: ['Trauma-Informed Care', 'Somatic Regulation', 'Targeted Medication', 'Safety Planning'],
     color: 'from-purple-500/10 to-indigo-500/20 border-purple-200',
-    imageUrl: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://images.pexels.com/photos/6625914/pexels-photo-6625914.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
     id: 'adhd',
@@ -316,7 +316,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Inattention to detail', 'Frequent misplacement of items', 'Restlessness', 'Time blindness', 'Procrastination'],
     treatments: ['ADHD Diagnostic Assessment', 'Targeted Prescribing', 'Executive Function Skills', 'Work Accommodations'],
     color: 'from-sky-500/10 to-teal-500/20 border-sky-200',
-    imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://images.pexels.com/photos/5905442/pexels-photo-5905442.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
     id: 'ocd',
@@ -326,7 +326,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Intrusive thoughts', 'Repetitive checking/washing', 'Need for exact symmetry', 'Intense anxiety when rituals disrupted'],
     treatments: ['Serotonergic Medication', 'Exposure Support', 'Cognitive Reframing', 'Family Psychoeducation'],
     color: 'from-rose-500/10 to-pink-500/20 border-rose-200',
-    imageUrl: 'https://images.unsplash.com/photo-1499209974431-9dac3ada00d7?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://images.pexels.com/photos/7821571/pexels-photo-7821571.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
     id: 'mood-disorders',
@@ -336,7 +336,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Rapid mood swings', 'Irritability', 'Emotional sensitivity', 'Impulsive reactions'],
     treatments: ['Mood Stabilizers', 'Emotion Regulation Techniques', 'Routine Building', 'Psychiatric Follow-ups'],
     color: 'from-violet-500/10 to-purple-500/20 border-violet-200',
-    imageUrl: 'https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://images.pexels.com/photos/4307663/pexels-photo-4307663.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
     id: 'bipolar',
@@ -346,7 +346,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Decreased need for sleep during highs', 'Racing thoughts', 'Impulsive decisions', 'Deep depressive crashes'],
     treatments: ['Precision Mood Stabilization', 'Circadian Rhythm Therapy', 'Relapse Prevention', 'Family Support'],
     color: 'from-emerald-500/10 to-teal-500/20 border-emerald-200',
-    imageUrl: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://images.pexels.com/photos/1648387/pexels-photo-1648387.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
     id: 'insomnia',
@@ -356,7 +356,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Daytime sleepiness', 'Difficulty falling asleep', 'Frequent night awakenings', 'Early morning waking'],
     treatments: ['CBT for Insomnia concepts', 'Sleep Architecture Review', 'Non-habit forming Meds', 'Circadian Reset'],
     color: 'from-indigo-500/10 to-blue-500/20 border-indigo-200',
-    imageUrl: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://images.pexels.com/photos/1001893/pexels-photo-1001893.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
     id: 'trauma',
@@ -366,7 +366,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Chronic self-doubt', 'Difficulty trusting others', 'Emotional dysregulation', 'Physical tension'],
     treatments: ['Compassionate Relational Therapy', 'Somatic Grounding', 'Custom Medication', 'Empowerment Protocol'],
     color: 'from-teal-500/10 to-emerald-500/20 border-teal-200',
-    imageUrl: 'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://images.pexels.com/photos/672630/pexels-photo-672630.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
     id: 'relationship-issues',
@@ -376,7 +376,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Feeling overwhelmed', 'Isolation', 'Anxiety about future', 'Communication breakdown'],
     treatments: ['Supportive Counseling', 'Boundary Frameworks', 'Transition Coaching', 'Stress Reduction'],
     color: 'from-orange-500/10 to-amber-500/20 border-orange-200',
-    imageUrl: 'https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://images.pexels.com/photos/4584241/pexels-photo-4584241.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
     id: 'grief',
@@ -386,7 +386,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Deep wave of sadness', 'Numbness', 'Disruption in daily routine', 'Longing & emptiness'],
     treatments: ['Empathic Grief Support', 'Sleep & Rest Recovery', 'Supportive Psychiatric Care'],
     color: 'from-cyan-500/10 to-blue-500/20 border-cyan-200',
-    imageUrl: 'https://images.unsplash.com/photo-1513279922550-250c2129b13a?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://images.pexels.com/photos/6620599/pexels-photo-6620599.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
     id: 'burnout',
@@ -396,7 +396,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Cynicism', 'Reduced efficacy', 'Physical depletion', 'Chronic fatigue'],
     treatments: ['Burnout Recovery Framework', 'Workplace Boundaries', 'Restorative Sleep Plan'],
     color: 'from-lime-500/10 to-emerald-500/20 border-lime-200',
-    imageUrl: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://images.pexels.com/photos/8369715/pexels-photo-8369715.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
     id: 'behavioral-issues',
@@ -406,7 +406,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Academic decline', 'Defiance / anger', 'Withdrawal from family', 'Peer conflict'],
     treatments: ['Child & Teen Psychiatric Care', 'Parent Collaboration', 'Behavioral Coping Skills'],
     color: 'from-fuchsia-500/10 to-pink-500/20 border-fuchsia-200',
-    imageUrl: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
     id: 'panic-disorder',
@@ -416,7 +416,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Chest tightness', 'Shortness of breath', 'Dizziness', 'Fear of dying or going crazy'],
     treatments: ['Rapid Panic Interventions', 'Anxiolytic Protocol', 'Breath & Somatic Control'],
     color: 'from-teal-500/10 to-sky-500/20 border-teal-200',
-    imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://images.pexels.com/photos/3823065/pexels-photo-3823065.jpeg?auto=compress&cs=tinysrgb&w=800'
   }
 ];
 
@@ -610,13 +610,13 @@ export const FAQ_DATA: FaqItem[] = [
     id: 'faq-1',
     category: 'General',
     question: 'What credentials does Dr. Barbara Clement Njoku hold?',
-    answer: 'Dr. Barbara Clement Njoku is a Doctor of Nursing Practice (DNP), Advanced Practice Registered Nurse (APRN), and board-certified Psychiatric-Mental Health Nurse Practitioner (PMHNP-BC) certified by the American Nurses Credentialing Center (ANCC). She holds advanced degrees from Johns Hopkins University and the University of Maryland.'
+    answer: 'Dr. Barbara Clement Njoku is a Doctor of Nursing Practice (DNP), Advanced Practice Registered Nurse (APRN), and board-certified Psychiatric-Mental Health Nurse Practitioner (PMHNP-BC) certified by the American Nurses Credentialing Center (ANCC).'
   },
   {
     id: 'faq-2',
     category: 'Appointments',
     question: 'How quickly can I schedule an initial psychiatric evaluation?',
-    answer: 'We prioritize prompt access to care. Initial evaluations can often be scheduled within 3 to 5 business days, either in-person at our Columbia, MD clinic or via secure Maryland telehealth video.'
+    answer: 'We prioritize prompt access to care. Initial evaluations can often be scheduled within 3 to 5 business days via secure Maryland statewide telehealth video visits.'
   },
   {
     id: 'faq-3',
@@ -634,7 +634,7 @@ export const FAQ_DATA: FaqItem[] = [
     id: 'faq-5',
     category: 'Services',
     question: 'What is the difference between a therapist and a Psychiatric Nurse Practitioner?',
-    answer: 'While therapists focus primarily on talk therapy, Psychiatric Mental Health Nurse Practitioners (PMHNPs) like Dr. Njoku are medical providers who can diagnose psychiatric conditions, order lab work, conduct evaluations, and prescribe psychiatric medications in combination with supportive therapeutic care.'
+    answer: 'While therapists focus primarily on talk therapy, Psychiatric Mental Health Nurse Practitioners (PMHNPs) like Dr. Njoku are Advanced Registered Nurse Practitioners who can diagnose psychiatric conditions, order and interpret lab work, conduct comprehensive diagnostic evaluations, develop individualized treatment plans, and prescribe psychiatric medications in combination with supportive therapeutic care.'
   },
   {
     id: 'faq-6',
