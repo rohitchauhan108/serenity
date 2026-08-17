@@ -42,14 +42,14 @@ export const MeetDoctor: React.FC<MeetDoctorProps> = ({ openAppointmentModal }) 
     {
       icon: ShieldCheck,
       category: 'National Board Certification',
-      highlights: ['Johns Hopkins Specialty', 'ANCC PMHNP-BC Certified', 'Prescriptive Authority'],
+      highlights: ['Advanced Practice Registered Nurse', 'ANCC PMHNP-BC Certified', 'Prescriptive Authority'],
       badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-400/30',
       nodeGradient: 'from-cyan-500 to-blue-600',
     },
     {
       icon: GraduationCap,
       category: 'Doctoral Excellence',
-      highlights: ['Doctor of Nursing Practice (DNP)', 'Univ of Maryland Graduate', 'Integrated Care Research'],
+      highlights: ['Doctor of Nursing Practice (DNP)', 'Advanced Psychiatric Specialty', 'Integrated Care Research'],
       badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-400/30',
       nodeGradient: 'from-purple-500 to-indigo-600',
     },
@@ -203,7 +203,7 @@ export const MeetDoctor: React.FC<MeetDoctorProps> = ({ openAppointmentModal }) 
                   🏥 2012 Acute Clinical Care
                 </span>
                 <span className="px-3 py-1 rounded-full bg-white/10 border border-white/10 text-xs font-semibold text-teal-200">
-                  🎓 2016 Johns Hopkins PMHNP
+                  🎓 2016 PMHNP Board Certified
                 </span>
                 <span className="px-3 py-1 rounded-full bg-white/10 border border-white/10 text-xs font-semibold text-teal-200">
                   📜 2019 DNP Doctorate Degree

@@ -209,7 +209,7 @@ export default function DrBarbaraPage() {
                 Academic Degrees & Board Certifications
               </h2>
               <p className="text-slate-600 text-base">
-                Rigorous doctoral-level medical education combined with specialized psychiatric credentials.
+                Rigorous doctoral-level nursing education combined with specialized psychiatric credentials.
               </p>
             </div>
 

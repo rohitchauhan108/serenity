@@ -4,9 +4,6 @@ import React, { useState } from "react";
 import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/Hero";
 import { AboutSerenity } from "../components/AboutSerenity";
-import { MeetDoctor } from "../components/MeetDoctor";
-import { ConditionsSection } from "../components/ConditionsSection";
-import { TreatmentProcess } from "../components/TreatmentProcess";
 import { BreathingWidget } from "../components/BreathingWidget";
 import { TestimonialsSection } from "../components/TestimonialsSection";
 import { FaqSection } from "../components/FaqSection";
@@ -74,7 +71,7 @@ export default function HomePage() {
         <OurTreatment />
 
         {/* Conditions We Treat */}
-        <ConditionsSection openAppointmentModal={openAppointmentModal} />
+        {/* <ConditionsSection openAppointmentModal={openAppointmentModal} /> */}
 
         {/* Interactive Breathing & Wellness Widget */}
         <BreathingWidget />
