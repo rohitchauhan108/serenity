@@ -86,11 +86,13 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Column 1: Brand Info */}
           <div className="lg:col-span-4 space-y-5">
             <Link href="/" className="flex items-center gap-3 group inline-block">
-              <div className="h-24  sm:h-28 rounded-2xl bg-white overflow-hidden shadow-2xl border-2 border-teal-400/40 group-hover:scale-105 transition-transform duration-300">
+              <div className="rounded-2xl bg-white overflow-hidden shadow-2xl border-2 border-teal-400/40 group-hover:scale-105 transition-transform duration-300">
                 <img
                   src={CLINIC_INFO.logoUrl}
                   alt="Serenity Behavioral & Wellness Services Logo"
-                  className="w-full h-full object-contain"
+                  width={150}
+                  height={150}
+                  className="object-cover"
                 />
               </div>
             </Link>

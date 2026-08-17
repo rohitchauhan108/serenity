@@ -7,7 +7,7 @@ import { SmoothScroll } from '../components/SmoothScroll';
 export const metadata: Metadata = {
   title: 'Serenity Behavioral & Wellness Services | Dr. Barbara Clement Njoku, DNP',
   description: 'Compassionate, evidence-based psychiatric evaluations, medication management, and mental health care across Maryland by Dr. Barbara Clement Njoku, DNP, APRN, PMHNP-BC.',
-  keywords: ['psychiatrist Maryland', 'PMHNP Columbia MD', 'medication management Maryland', 'telehealth psychiatry MD', 'ADHD evaluation Maryland', 'depression treatment Columbia'],
+  keywords: ['psychiatrist Maryland', 'PMHNP  MD', 'medication management Maryland', 'telehealth psychiatry MD', 'ADHD evaluation Maryland', 'depression treatment Columbia'],
   icons: {
     icon: [
       { url: '/favicon.png', type: 'image/png' },

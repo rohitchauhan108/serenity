@@ -228,15 +228,16 @@ export default function ConditionsPage() {
                       <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-teal-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
 
                       {/* Condition Card Image */}
-                      <div className={`relative overflow-hidden rounded-t-3xl bg-gradient-to-br ${cond.color} border-b border-slate-100/80`}>
+                      <div className="relative overflow-hidden rounded-t-3xl bg-slate-100 border-b border-slate-100/80">
                         <div className="relative h-36 overflow-hidden">
                           <img
                             src={cond.imageUrl}
                             alt={cond.name}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 mix-blend-overlay opacity-80"
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                             referrerPolicy="no-referrer"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
+                          {/* Subtle bottom fade for visual polish */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent" />
                         </div>
                         <div className="absolute top-3 left-3 z-10">
                           <span className="text-[10px] font-bold uppercase tracking-wider text-teal-900 bg-white/90 backdrop-blur-sm px-2.5 py-0.5 rounded-full border border-teal-200/60 shadow-sm">
@@ -288,14 +289,14 @@ export default function ConditionsPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm animate-in fade-in duration-200">
           <div className="bg-white rounded-3xl max-w-xl w-full shadow-2xl border border-slate-100 relative max-h-[90vh] overflow-y-auto">
             {/* Modal Image Banner */}
-            <div className={`relative h-44 overflow-hidden rounded-t-3xl bg-gradient-to-br ${selectedCondition.color}`}>
+            <div className="relative h-44 overflow-hidden rounded-t-3xl bg-slate-100">
               <img
                 src={selectedCondition.imageUrl}
                 alt={selectedCondition.name}
-                className="w-full h-full object-cover mix-blend-overlay opacity-90"
+                className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent" />
               <button
                 onClick={() => setSelectedCondition(null)}
                 className="absolute top-4 right-4 p-2 rounded-full bg-white/90 backdrop-blur-sm text-slate-600 hover:bg-white hover:text-slate-900 cursor-pointer shadow-lg border border-white/50 z-10"
@@ -306,11 +307,11 @@ export default function ConditionsPage() {
 
             <div className="p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-4 -mt-16 relative z-10">
-              <div className="p-3 bg-teal-100 text-teal-800 rounded-2xl">
+              <div className="p-3 bg-teal-100 text-teal-800 rounded-2xl shadow-md">
                 <Brain className="w-6 h-6 text-teal-700" />
               </div>
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
+                <span className="text-xs font-bold uppercase tracking-wider text-teal-700 bg-white px-2 py-0.5 rounded-md shadow-xs">
                   {selectedCondition.category}
                 </span>
                 <h3 className="font-heading font-extrabold text-2xl text-slate-900">

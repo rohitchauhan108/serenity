@@ -127,7 +127,7 @@ export default function ServicesPage() {
               <div className="lg:col-span-4 hidden lg:block">
                 <div className="relative rounded-3xl overflow-hidden border border-teal-500/30 shadow-2xl aspect-[4/3]">
                   <img
-                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800"
+                    src="/service/services.webp"
                     alt="Psychiatric Consultation Session"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"

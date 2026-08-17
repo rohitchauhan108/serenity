@@ -218,7 +218,7 @@ export const InformativeCta: React.FC<InformativeCtaProps> = ({
                 Modern Mental Healthcare
               </span>
               <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-white">
-                HIPAA-Compliant Telehealth & Peaceful Columbia Office
+                HIPAA-Compliant Telehealth
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
                 Attend secure virtual visits from home or visit our quiet, welcoming suite in Howard County, MD.

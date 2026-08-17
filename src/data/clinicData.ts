@@ -12,7 +12,7 @@ export const CLINIC_INFO = {
   shortName: 'Serenity Behavioral',
   location: 'Maryland, USA',
   address: '8830 Stanford Blvd, Suite 210, Columbia, MD 21045',
-  phone: '301 793 0825',
+  phone: '240 330 2591',
   altPhone: '(443) 555-7821',
   email: 'info@serenitybws.com',
   workingHours: [
@@ -108,7 +108,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     keyBenefits: ['60-90 minute thorough consultation', 'Evidence-based diagnostic criteria (DSM-5-TR)', 'Rule out underlying physical conditions', 'Collaborative formulation of next steps'],
     iconName: 'ClipboardCheck',
     isPopular: true,
-    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80'
+    imageUrl: '/service/services.webp'
   },
   {
     id: 'medication-management',
@@ -130,7 +130,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     keyBenefits: ['Panic attack relief tools', 'Cognitive restructuring', 'Social anxiety confidence building', 'Somatic relaxation techniques'],
     iconName: 'HeartPulse',
     isPopular: true,
-    imageUrl: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=1200&q=80'
+    imageUrl: '/service/service1.webp'
   },
   {
     id: 'depression-treatment',
@@ -141,7 +141,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     keyBenefits: ['Relief from chronic emotional heaviness', 'Sleep and energy optimization', 'Neurochemical balance restoration', 'Relapse prevention strategies'],
     iconName: 'Sun',
     isPopular: true,
-    imageUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80'
+    imageUrl: '/service/service2.webp'
   },
   {
     id: 'bipolar-disorder',
@@ -164,7 +164,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     keyBenefits: ['Nervous system desensitization support', 'Nightmare and intrusion management', 'Safe, supportive therapeutic alliance', 'Somatic & cognitive coping methods'],
     iconName: 'Shield',
     isPopular: false,
-    imageUrl: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80'
+    imageUrl: '/service/service3.webp'
   },
   {
     id: 'mood-disorders',
@@ -186,7 +186,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     keyBenefits: ['Actionable daily coping mechanisms', 'Stress resilience building', 'Boundary setting & communication', 'Habit reformation support'],
     iconName: 'Brain',
     isPopular: false,
-    imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80'
+    imageUrl: '/service/service4.webp'
   },
   {
     id: 'child-adolescent-psychiatry',
@@ -208,7 +208,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     keyBenefits: ['Burnout and chronic stress management', 'Flexible appointment times', 'Strict confidentiality guarantee', 'Comprehensive health integration'],
     iconName: 'UserCheck',
     isPopular: false,
-    imageUrl: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1200&q=80'
+    imageUrl: '/service/service5.webp'
   },
   {
     id: 'geriatric-psychiatry',
@@ -276,7 +276,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Racing heartbeat', 'Restlessness', 'Muscle tension', 'Overthinking', 'Sleep disturbances'],
     treatments: ['Psychiatric Evaluation', 'Cognitive Restructuring', 'Anxiolytic / SSRI Medication', 'Breathwork'],
     color: 'from-teal-500/10 to-emerald-500/20 border-teal-200',
-    imageUrl: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=800&q=80'
+    imageUrl: '/service/service1.webp'
   },
   {
     id: 'depression',
@@ -286,7 +286,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Persistent low mood', 'Fatigue / low energy', 'Feelings of worthlessness', 'Changes in appetite', 'Concentration loss'],
     treatments: ['Medication Management', 'Behavioral Activation', 'Lifestyle Guidance', 'Supportive Therapy'],
     color: 'from-blue-500/10 to-cyan-500/20 border-blue-200',
-    imageUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80'
+    imageUrl: '/service/service2.webp'
   },
   {
     id: 'stress',
@@ -306,7 +306,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Flashbacks', 'Nightmares', 'Hypervigilance', 'Emotional numbness', 'Avoidance of triggers'],
     treatments: ['Trauma-Informed Care', 'Somatic Regulation', 'Targeted Medication', 'Safety Planning'],
     color: 'from-purple-500/10 to-indigo-500/20 border-purple-200',
-    imageUrl: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80'
+    imageUrl: '/service/service3.webp'
   },
   {
     id: 'adhd',
@@ -326,7 +326,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Intrusive thoughts', 'Repetitive checking/washing', 'Need for exact symmetry', 'Intense anxiety when rituals disrupted'],
     treatments: ['Serotonergic Medication', 'Exposure Support', 'Cognitive Reframing', 'Family Psychoeducation'],
     color: 'from-rose-500/10 to-pink-500/20 border-rose-200',
-    imageUrl: 'https://images.unsplash.com/photo-1499209974431-9dac3ada00d7?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://garrettcounseling.com/wp-content/uploads/Living-With-Obsessive-Compulsive-Disorder.png'
   },
   {
     id: 'mood-disorders',
@@ -346,7 +346,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Decreased need for sleep during highs', 'Racing thoughts', 'Impulsive decisions', 'Deep depressive crashes'],
     treatments: ['Precision Mood Stabilization', 'Circadian Rhythm Therapy', 'Relapse Prevention', 'Family Support'],
     color: 'from-emerald-500/10 to-teal-500/20 border-emerald-200',
-    imageUrl: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://i.pinimg.com/736x/68/1e/11/681e11a5ebf9e78912816548172c8caf.jpg'
   },
   {
     id: 'insomnia',
@@ -356,7 +356,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Daytime sleepiness', 'Difficulty falling asleep', 'Frequent night awakenings', 'Early morning waking'],
     treatments: ['CBT for Insomnia concepts', 'Sleep Architecture Review', 'Non-habit forming Meds', 'Circadian Reset'],
     color: 'from-indigo-500/10 to-blue-500/20 border-indigo-200',
-    imageUrl: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://i.pinimg.com/1200x/57/f7/37/57f73736d732188e1f60f9f4af98cc0b.jpg'
   },
   {
     id: 'trauma',
@@ -366,7 +366,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Chronic self-doubt', 'Difficulty trusting others', 'Emotional dysregulation', 'Physical tension'],
     treatments: ['Compassionate Relational Therapy', 'Somatic Grounding', 'Custom Medication', 'Empowerment Protocol'],
     color: 'from-teal-500/10 to-emerald-500/20 border-teal-200',
-    imageUrl: 'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://i.pinimg.com/1200x/c0/05/50/c00550bc8e11e2b2485ebd0e0f2d2567.jpg'
   },
   {
     id: 'relationship-issues',
@@ -396,7 +396,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Cynicism', 'Reduced efficacy', 'Physical depletion', 'Chronic fatigue'],
     treatments: ['Burnout Recovery Framework', 'Workplace Boundaries', 'Restorative Sleep Plan'],
     color: 'from-lime-500/10 to-emerald-500/20 border-lime-200',
-    imageUrl: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://i.pinimg.com/1200x/fe/78/4b/fe784b99b37e1f12571695560bbe5472.jpg'
   },
   {
     id: 'behavioral-issues',
@@ -406,7 +406,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Academic decline', 'Defiance / anger', 'Withdrawal from family', 'Peer conflict'],
     treatments: ['Child & Teen Psychiatric Care', 'Parent Collaboration', 'Behavioral Coping Skills'],
     color: 'from-fuchsia-500/10 to-pink-500/20 border-fuchsia-200',
-    imageUrl: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://i.pinimg.com/1200x/33/44/39/334439407d963a350d560ec4f583c3dc.jpg'
   },
   {
     id: 'panic-disorder',
@@ -416,7 +416,7 @@ export const CONDITIONS_DATA: ConditionItem[] = [
     symptoms: ['Chest tightness', 'Shortness of breath', 'Dizziness', 'Fear of dying or going crazy'],
     treatments: ['Rapid Panic Interventions', 'Anxiolytic Protocol', 'Breath & Somatic Control'],
     color: 'from-teal-500/10 to-sky-500/20 border-teal-200',
-    imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80'
+    imageUrl: 'https://i.pinimg.com/736x/38/d5/06/38d506574838e02ae8ed7055f1c3a9dc.jpg'
   }
 ];
 
@@ -610,7 +610,7 @@ export const FAQ_DATA: FaqItem[] = [
     id: 'faq-1',
     category: 'General',
     question: 'What credentials does Dr. Barbara Clement Njoku hold?',
-    answer: 'Dr. Barbara Clement Njoku is a Doctor of Nursing Practice (DNP), Advanced Practice Registered Nurse (APRN), and board-certified Psychiatric-Mental Health Nurse Practitioner (PMHNP-BC) certified by the American Nurses Credentialing Center (ANCC). She holds advanced degrees from Johns Hopkins University and the University of Maryland.'
+    answer: 'Dr. Barbara Clement Njoku is a Doctor of Nursing Practice (DNP), Advanced Practice Registered Nurse (APRN), and board-certified Psychiatric-Mental Health Nurse Practitioner (PMHNP-BC) certified by the American Nurses Credentialing Center (ANCC).'
   },
   {
     id: 'faq-2',
