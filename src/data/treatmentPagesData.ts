@@ -12,7 +12,7 @@ export const TREATMENT_PAGES: TreatmentPageData[] = [
     slug: 'psychiatric-evaluation',
     title: 'Psychiatric Evaluation',
     summary: 'A thorough assessment to understand symptoms, history, and next steps.',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80',
+    image: 'https://i.pinimg.com/736x/49/d9/b4/49d9b4b04f6428e4a8c4880722eecdf5.jpg',
     overview: 'We meet with you to review your concerns, history, and goals so the treatment plan starts with clear understanding.',
     highlights: ['Comprehensive intake', 'Clear diagnosis planning', 'Next-step recommendations']
   },
