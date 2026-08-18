@@ -28,7 +28,7 @@ export const TREATMENT_PAGES: TreatmentPageData[] = [
     slug: 'treatment-for-substance-abuse-and-dependence',
     title: 'Treatment for Substance Abuse',
     summary: 'Support for substance-related concerns, recovery planning, and relapse prevention.',
-    image: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=1600&q=80',
+    image: 'https://i.pinimg.com/1200x/c3/4a/2d/c34a2d1172fc117f66f5e5d10e58418c.jpg',
     overview: 'Care is centered on honest discussion, supportive planning, and practical follow-up around substance use and recovery.',
     highlights: ['Recovery planning', 'Trigger review', 'Supportive follow-up']
   },
@@ -44,7 +44,7 @@ export const TREATMENT_PAGES: TreatmentPageData[] = [
     slug: 'individual-therapy',
     title: 'Individual Therapy',
     summary: 'One-on-one sessions focused on your personal goals and concerns.',
-    image: 'https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&w=1600&q=80',
+    image: 'https://i.pinimg.com/1200x/21/da/5f/21da5fe0a458402197fe8c019bfbcf3a.jpg',
     overview: 'Individual sessions give you private space to talk, reflect, and work through what matters most to you.',
     highlights: ['Private setting', 'Personal goals', 'Focused support']
   },
@@ -52,7 +52,7 @@ export const TREATMENT_PAGES: TreatmentPageData[] = [
     slug: 'online-therapy',
     title: 'Online Therapy',
     summary: 'Virtual sessions that make care more accessible from home.',
-    image: 'https://images.unsplash.com/photo-1594882645126-14020914d58d?auto=format&fit=crop&w=1600&q=80',
+    image: 'https://i.pinimg.com/736x/e2/89/d7/e289d7c7c4277b1514518c9d7b87b319.jpg',
     overview: 'Online therapy offers the same supportive conversation in a secure telehealth format.',
     highlights: ['Secure video visits', 'Convenient access', 'Same-day flexibility']
   },
@@ -60,7 +60,7 @@ export const TREATMENT_PAGES: TreatmentPageData[] = [
     slug: 'cognitive-behavioral-therapy',
     title: 'Cognitive Behavioral Therapy',
     summary: 'A practical approach to changing unhelpful thought and behavior patterns.',
-    image: 'https://images.unsplash.com/photo-1522098543979-ffc7f79f9b8b?auto=format&fit=crop&w=1600&q=80',
+    image: 'https://i.pinimg.com/1200x/5f/a8/ac/5fa8ace9079d9df4936e6a43f132053a.jpg',
     overview: 'CBT uses structured strategies to help you notice patterns, practice new responses, and build healthier habits.',
     highlights: ['Thought patterns', 'Behavior change', 'Skill building']
   },
@@ -84,7 +84,7 @@ export const TREATMENT_PAGES: TreatmentPageData[] = [
     slug: 'dialectical-behavior-therapy',
     title: 'Dialectical Behavior Therapy',
     summary: 'Skills for emotion regulation, distress tolerance, and relationships.',
-    image: 'https://images.unsplash.com/photo-1512341689857-6438e9415164?auto=format&fit=crop&w=1600&q=80',
+    image: 'https://i.pinimg.com/1200x/9c/1b/59/9c1b592fc5e8e70953a2376c233e7487.jpg',
     overview: 'DBT is structured around practical skills that help manage strong emotions and reactions.',
     highlights: ['Emotion regulation', 'Distress tolerance', 'Relationship skills']
   },
@@ -100,7 +100,7 @@ export const TREATMENT_PAGES: TreatmentPageData[] = [
     slug: 'exposure-therapy',
     title: 'Exposure Therapy',
     summary: 'A gradual approach to reducing fear and avoidance.',
-    image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1600&q=80',
+    image: 'https://i.pinimg.com/736x/d1/70/76/d170767aeaf788ba4f000df8294e4bc0.jpg',
     overview: 'Exposure therapy is paced carefully so fear can be addressed in a safe and structured way.',
     highlights: ['Gradual steps', 'Fear reduction', 'Safe pacing']
   },
@@ -108,42 +108,13 @@ export const TREATMENT_PAGES: TreatmentPageData[] = [
     slug: 'relaxation-and-lifestyle-changes',
     title: 'Relaxation and lifestyle changes',
     summary: 'Simple changes that support recovery, sleep, and stress management.',
-    image: 'https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&w=1600&q=80',
+    image: 'https://i.pinimg.com/1200x/b8/d6/c3/b8d6c32278cb028673812424ce6922af.jpg',
     overview: 'This treatment focuses on routine, rest, and practical habits that support wellness outside the office.',
     highlights: ['Sleep support', 'Stress reduction', 'Daily routines']
   },
-  {
-    slug: 'substance-abuse',
-    title: 'Substance Abuse',
-    summary: 'Care that focuses on substance use concerns and support needs.',
-    image: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=1600&q=80',
-    overview: 'This page keeps the focus on substance use concerns, safety, and recovery support.',
-    highlights: ['Use patterns', 'Support planning', 'Recovery focus']
-  },
-  {
-    slug: 'psychiatric-rehabilitation-program-prp',
-    title: 'Psychiatric Rehabilitation Program (PRP)',
-    summary: 'Skill-building support for daily functioning and community stability.',
-    image: 'https://images.unsplash.com/photo-1529692236671-f1a09b4f4c3c?auto=format&fit=crop&w=1600&q=80',
-    overview: 'PRP support is designed to help with routine, independence, and practical life skills.',
-    highlights: ['Daily living skills', 'Community support', 'Structured goals']
-  },
-  {
-    slug: 'partial-hospitalization-program',
-    title: 'Partial Hospitalization Program',
-    summary: 'Higher-support care for patients who need more than standard outpatient visits.',
-    image: 'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1600&q=80',
-    overview: 'PHP is a more intensive option for people who need frequent, structured treatment during recovery.',
-    highlights: ['Higher support level', 'Frequent visits', 'Structured treatment']
-  },
-  {
-    slug: 'intensive-outpatient-program-iop',
-    title: 'Intensive Outpatient Program (IOP)',
-    summary: 'A structured outpatient option with more support than routine therapy.',
-    image: 'https://images.unsplash.com/photo-1517022812141-23620dba5c23?auto=format&fit=crop&w=1600&q=80',
-    overview: 'IOP provides steady support while still letting patients live at home and keep daily responsibilities.',
-    highlights: ['Structured outpatient care', 'More frequent sessions', 'Home-based recovery']
-  }
+ 
+
+
 ];
 
 export const TREATMENT_PAGE_MAP = Object.fromEntries(

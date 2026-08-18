@@ -90,8 +90,8 @@ export const Footer: React.FC<FooterProps> = ({
                 <img
                   src={CLINIC_INFO.logoUrl}
                   alt="Serenity Behavioral & Wellness Services Logo"
-                  width={150}
-                  height={150}
+                  width={250}
+                  height={250}
                   className="object-cover"
                 />
               </div>

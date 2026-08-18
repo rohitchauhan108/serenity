@@ -205,7 +205,7 @@ export const InformativeCta: React.FC<InformativeCtaProps> = ({
           
           <div className="lg:col-span-7 relative h-64 sm:h-80 rounded-3xl overflow-hidden border border-white/10 shadow-xl group">
             <Image
-              src="https://images.pexels.com/photos/7176043/pexels-photo-7176043.jpeg"
+              src="https://i.pinimg.com/1200x/46/f1/cd/46f1cda4a90b890c6dd8c3eef18f6546.jpg"
               alt="Telehealth Care at Serenity Behavioral"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700"
