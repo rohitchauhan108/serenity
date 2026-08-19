@@ -287,9 +287,7 @@ export default function AboutCompanyPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6 text-white">
-                    <span className="text-xs font-bold uppercase tracking-widest text-teal-300">
-                      Columbia Facility
-                    </span>
+                   
                     <h4 className="font-heading font-extrabold text-lg mt-1">
                       Peaceful, Confidential Clinical Environment
                     </h4>

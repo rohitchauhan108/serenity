@@ -165,7 +165,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             href="/"
             className="flex items-center gap-3 group text-left focus:outline-none"
           >
-            <div className="relative h-20 sm:h-28 md:h-32 lg:h-36 overflow-hidden group-hover:scale-105 transition-transform duration-300">
+            <div className="relative h-20 sm:h-28 md:h-44 overflow-hidden group-hover:scale-105 transition-transform duration-300">
               <img
                 src={CLINIC_INFO.logoUrl}
                 alt="Serenity Behavioral & Wellness Services Logo"

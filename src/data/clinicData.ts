@@ -634,7 +634,7 @@ export const FAQ_DATA: FaqItem[] = [
     id: 'faq-5',
     category: 'Services',
     question: 'What is the difference between a therapist and a Psychiatric Nurse Practitioner?',
-    answer: 'While therapists focus primarily on talk therapy, Psychiatric Mental Health Nurse Practitioners (PMHNPs) like Dr. Njoku are medical providers who can diagnose psychiatric conditions, order lab work, conduct evaluations, and prescribe psychiatric medications in combination with supportive therapeutic care.'
+    answer: 'While therapists focus primarily on talk therapy, Psychiatric Mental Health Nurse Practitioners (PMHNPs) like Dr. Njoku are board certified nurse practitioners who can diagnose psychiatric conditions, order lab work, conduct evaluations, and prescribe psychiatric medications in combination with supportive therapeutic care.'
   },
   {
     id: 'faq-6',
